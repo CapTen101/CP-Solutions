@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, sum=0, v=0; string seq; bool yes_valley = 1;
+    cin>>n; 
+    int a[n];
+    cin>>seq;
+    
+    for (int i = 0; i < seq.length(); i++) {
+      if (seq[i] == 'U') a[i]=1;
+      if (seq[i] == 'D') a[i]=-1;
+    }
+    
+    for (int i = 0; i < n; i++) {
+      if(sum<0) {
+          yes_valley=1; 
+      } else{
+          yes_valley=0;
+      }
+      sum+=a[i];
+      if(sum==0 && yes_valley==1) v++;
+    }
+    
+    cout<<v;
+}

@@ -17,7 +17,6 @@ long lcm(long a, long b)
 
 int main()
 {
-
     int t;
     cin >> t;
 
@@ -29,6 +28,6 @@ int main()
         long gcD = gcd(a, b);
         long lcM = lcm(a, b);
 
-        cout << gcD << " " << lcM<<endl;
+        cout << gcD << " " << lcM << endl;
     }
 }

@@ -12,9 +12,19 @@ long gcd(int a, int b)
 
 int main()
 {
-    int a, b, c, x, y;
+    int a, b, x, y;
+    long c;
     cin >> a >> b >> c;
 
     long GCD = gcd(a, b);
+    cout<<GCD;
 
+    if (c % GCD == 0)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
 }

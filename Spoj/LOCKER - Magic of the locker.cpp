@@ -5,7 +5,7 @@ using namespace std;
 int main(){
     long t; cin>>t;
     loop(long, i, 0, t){
-        s
+        
     }
     
 }

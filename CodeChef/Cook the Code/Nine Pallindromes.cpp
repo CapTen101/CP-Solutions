@@ -41,7 +41,6 @@ int main()
         {
 
             palin = palindrome(i);
-            // div = i % 9 ? false : true;
             notzero = i % 10 ? true : false;
             if (palin && notzero)
             {

@@ -25,30 +25,42 @@ int main()
         {
             absorbby2 = x / 2 + 10;
             strikeminus10 = x - 10;
-            if (absorbby2 > strikeminus10 && n > 0)
+            if (absorbby2 >= strikeminus10 && n > 0)
             {
                 spell = absorbby2;
                 n--;
             }
-            else if (strikeminus10 > absorbby2 && m > 0)
+            else if (strikeminus10 >= absorbby2 && m > 0)
             {
                 spell = strikeminus10;
                 m--;
             }
             else
             {
-                if (x == 0)
-                {
-                    cout << "YES" << endl;
-                }
-                else
-                {
-                    goto DOspell;
-                }
+                // if (x == 0)
+                // {
+                //     cout << "YES" << endl;
+                //     break;
+                // }
+                // else
+                // {
+                //     // goto DOspell;
+                //     break;
+                // }
+                break;
             }
 
         DOspell:
+
             x -= spell;
+
+            // if (x == 0)
+            // {
+            //     cout << "YES" << endl;
+            // }
+            // else if (x>0 && )
+            // {
+            // }
 
         } while ((x > 0) && (n || m));
 

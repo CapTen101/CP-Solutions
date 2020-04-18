@@ -20,37 +20,33 @@ int main()
         cin >> x >> n >> m;
 
         int absorbby2, strikeminus10, spell;
+        absorbby2 = x / 2 + 10;
+        strikeminus10 = x - 10;
 
-        do
+        if (x > m * 10)
         {
-            absorbby2 = x / 2 + 10;
-            strikeminus10 = x - 10;
-            if (absorbby2 >= strikeminus10 && n > 0)
+            x -= m * 10;
+           
+            while (n > 0 && x > 0)
             {
-                spell = absorbby2;
-                n--;
-            }
-            else if (strikeminus10 >= absorbby2 && m > 0)
-            {
+                absorbby2 = x / 2 + 10;
                 spell = strikeminus10;
-                m--;
-            }
-            else
-            {
-                break;
-            }
+                x -= spell;
+                n--;
+ }
+        }
+        else
+        {
+            cout << "YES" << endl;
+        }
 
-        DOspell:
-
-            x -= spell;
-
-        } while ((x > 0) && (n || m));
+        
 
         if (x <= 0)
         {
             cout << "YES" << endl;
         }
-        else
+        else if (n < 0)
         {
             cout << "NO" << endl;
         }

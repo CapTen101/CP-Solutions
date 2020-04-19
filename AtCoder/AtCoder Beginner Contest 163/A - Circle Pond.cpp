@@ -1,21 +1,14 @@
-#include <bits/stdc++.h>
-using namespace std;
 
-#define my_sizeof(type) ((char *)(&type + 1) - (char *)(&type))
-#define loop(typeofx, x, start, end) for (typeofx x = start; x < end; ++x)
-#define listTraverse(datatypeoflist, x, startList, endList) for (list<datatypeoflist>::iterator x = startList; x != endList; ++x)
-#define ll long long int
-#define l long int
-#define pb push_back
-#define MOD 1000000007
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 int main()
 {
-
     int r;
     cin >> r;
 
-    float c;
-    c = (2 * 22 * r) / 7;
-    cout << c;
+    double pi = 3.14159265358979323846;
+    cout << setprecision(9) << pi * 2 * r;
 }

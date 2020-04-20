@@ -38,20 +38,22 @@ int* decToBinary(int n)
 int main()
 {
 
-    int t;
-    cin >> t;
+    // int t;
+    // cin >> t;
 
-    loop(int, i, 0, t)
-    {
-        char c;
-        l N;
-        int m;
-        cin >> N >> m >> c;
-        
+    // loop(int, i, 0, t)
+    // {
+    //     char c;
+    //     l N;
+    //     int m;
+    //     cin >> N >> m >> c;
 
-        if (c == 'L')
-        {
 
-        }
-    }
+    //     if (c == 'L')
+    //     {
+
+    //     }
+    // }
+
+    
 }

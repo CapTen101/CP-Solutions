@@ -15,7 +15,7 @@ int main()
     cin >> t;
     ll MOD = 1000000007;
 
-    while(t--)
+    while (t--)
     {
         int n;
         unsigned ll a;
@@ -39,7 +39,7 @@ int main()
             {
                 if (!m[j][n - i + 1] == 0)
                 {
-                    p[i - 1] *= m[j][n - i + 1];
+                    p[i - 1] = (p[i - 1] % MOD * m[j][n - i + 1] % MOD) % MOD;
                     m[j][n - i + 1] = 0;
                 }
             }
@@ -47,7 +47,7 @@ int main()
             {
                 if (!m[i][n - i + j] == 0)
                 {
-                    p[i - 1] *= m[i][n - i + j];
+                    p[i - 1] = (p[i - 1] % MOD * m[i][n - i + j] % MOD) % MOD;
                     m[i][n - i + j] = 0;
                 }
             }
@@ -55,11 +55,11 @@ int main()
             {
                 loop(int, h, 0, n)
                 {
-                    m[g][h] *= p[i - 1];
+                    m[g][h] = m[g][h] * p[i - 1];
                 }
             }
 
-            sum += (p[i - 1] % MOD);
+            sum += (p[i - 1]);
         }
         cout << sum << endl;
     }
@@ -71,7 +71,6 @@ int main()
 // using namespace std;
 
 // #define ll long long int
-
 
 // long long int powerr(long long int a, int p)
 // {

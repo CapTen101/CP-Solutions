@@ -17,9 +17,11 @@ int sumarray(int a[], int sizeofa, int b[], int sizeofb)
     {
         c[i] = (frontpart + a[i] + b[i]) % 10;
         frontpart = ((a[i] + b[i]) - ((a[i] + b[i]) % 10)) % 10;
-    }
-    if (i == 0 && sizeofb > sizeofa)
-    {
+
+        if (i == 0 && sizeofb > sizeofa)
+        {
+            
+        }
     }
 }
 int main()

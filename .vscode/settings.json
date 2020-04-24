@@ -4,5 +4,6 @@
         "vector": "cpp",
         "deque": "cpp",
         "string": "cpp"
-    }
+    },
+    "python.pythonPath": "D:\\DELL\\Softwares\\Python\\python.exe"
 }

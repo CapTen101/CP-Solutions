@@ -26,19 +26,23 @@ int sumarray(int a[], int sizeofa, int b[], int sizeofb)
 }
 int main()
 {
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-    }
-    int m;
-    cin >> m;
-    int b[m];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> b[i];
-    }
-    sumarray(a, n, b, m);
+//     int n;
+//     cin >> n;
+//     int a[n];
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> a[i];
+//     }
+//     int m;
+//     cin >> m;
+//     int b[m];
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> b[i];
+//     }
+//     sumarray(a, n, b, m);
+vector<int> a;
+a.pb(4);
+a.pb(28);
+cout<<a.size();
 }

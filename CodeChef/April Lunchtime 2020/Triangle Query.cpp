@@ -1,92 +1,58 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define my_sizeof(type) ((char *)(&type + 1) - (char *)(&type))
-#define loop(typeofx, x, start, end) for (typeofx x = start; x < end; x++)
-#define listTraverse(datatypeoflist, x, startList, endList) for (list<datatypeoflist>::iterator x = startList; x != endList; ++x)
-#define ll long long int
-#define l long int
-#define pb push_back
-#define MOD 1000000007
-
 int main()
 {
+    ios_base::sync_with_stdio(false);
 
     int t;
     cin >> t;
 
     while (t--)
     {
-        l n, q, answercount = 0;
+        long n, q, answercount = 0;
         cin >> n >> q;
-        vector<pair<l, l>> points(n);
-        l L[q], r[q];
-        loop(l, i, 0, n)
+        vector<pair<long, long>> points(n);
+        long L[q], r[q];
+        for(long i=0; i<n; i++)
         {
             cin >> points[i].first >> points[i].second;
         }
-        loop(l, i, 0, q)
+        for(long i=0; i<q; i++)
         {
             cin >> L[i] >> r[i];
         }
 
-        loop(l, j, 0, q)
+        for(long j=0; j<q; j++)
         {
-            loop(l, i, 0, n)
+            for(long i=0; i<n; i++)
             {
-                if (r[j] > L[j])
-                {
-                    if (points[i].first <= ((L[j] + r[j]) / 2))
-                    {
-                        l unknowny = points[i].first - L[j];
 
-                        if ((points[i].first >= L[j]) && (points[i].second <= unknowny) && (points[i].first <= r[j]))
-                        {
-                            answercount++;
-                        }
-                        else
-                            continue;
+                if (points[i].first <= ((L[j] + r[j]) / 2))
+                {
+                    long unknowny = points[i].first - L[j];
+
+                    if ((points[i].first >= L[j]) && (points[i].second <= unknowny) && (points[i].first <= r[j]))
+                    {
+                        answercount++;
                     }
                     else
-                    {
-                        l unknowny = r[j] - points[i].first;
-
-                        if ((points[i].first >= L[j]) && (points[i].second <= unknowny) && (points[i].first <= r[j]))
-                        {
-                            answercount++;
-                        }
-                        else
-                            continue;
-                    }
+                        continue;
                 }
-
                 else
                 {
-                    if (points[i].first <= ((L[j] + r[j]) / 2))
-                    {
-                        l unknowny = points[i].first - r[j];
+                    long unknowny = r[j] - points[i].first;
 
-                        if ((points[i].first >= r[j]) && (points[i].second <= unknowny) && (points[i].first <= L[j]))
-                        {
-                            answercount++;
-                        }
-                        else
-                            continue;
+                    if ((points[i].first >= L[j]) && (points[i].second <= unknowny) && (points[i].first <= r[j]))
+                    {
+                        answercount++;
                     }
                     else
-                    {
-                        l unknowny = L[j] - points[i].first;
-
-                        if ((points[i].first >= r[j]) && (points[i].second <= unknowny) && (points[i].first <= L[j]))
-                        {
-                            answercount++;
-                        }
-                        else
-                            continue;
-                    }
+                        continue;
                 }
             }
             cout << answercount << " ";
+            answercount = 0;
         }
     }
 }

@@ -1,0 +1,17 @@
+- Birthday Paradox Problem: https://www.geeksforgeeks.org/birthday-paradox/
+- Codeforces Link: https://codeforces.com/problemset?tags=math,brute%20force
+- Big Integer: https://www.geeksforgeeks.org/biginteger-class-in-java/
+- Factorial of Large Number: https://practice.geeksforgeeks.org/problems/factorials-of-large-numbers/0
+- Modular Arithmetic Properties: http://theoryofprogramming.com/2014/12/24/modular-arithmetic-properties/
+- Fast Exponentiation: https://www.geeksforgeeks.org/modular-exponentiation-power-in-modular-arithmetic/
+- Catalan Number: https://www.geeksforgeeks.org/program-nth-catalan-number/
+- Solving Linear Recurrence Relation: https://www.hackerearth.com/practice/notes/solving-linear-recurrence-relation/
+- Recursive Subsequence: https://www.spoj.com/problems/SEQ/
+- Divisible Subset: https://www.codechef.com/problems/DIVSUBS
+- Pigeonhole Principle: https://www.geeksforgeeks.org/discrete-mathematics-the-pigeonhole-principle/
+- SPOJ HOLI: https://www.spoj.com/problems/HOLI/
+- The Grey Similar Code: https://www.codechef.com/problems/GRAYSC
+- Inclusion and Exclusion Principle: https://www.geeksforgeeks.org/inclusion-exclusion-principle-and-programming-applications/
+- Sereja and LCM: https://www.codechef.com/problems/SEALCM
+- Mathematical expectation and Bernoulli Trials: https://www.codechef.com/wiki/tutorial-expectation
+- OEIS: http://oeis.org/

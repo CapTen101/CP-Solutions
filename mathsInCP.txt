@@ -1,3 +1,4 @@
+// From the Youtube Video: https://www.youtube.com/watch?v=GwVDCi8CCAI
 - Birthday Paradox Problem: https://www.geeksforgeeks.org/birthday-paradox/
 - Codeforces Link: https://codeforces.com/problemset?tags=math,brute%20force
 - Big Integer: https://www.geeksforgeeks.org/biginteger-class-in-java/
@@ -15,3 +16,15 @@
 - Sereja and LCM: https://www.codechef.com/problems/SEALCM
 - Mathematical expectation and Bernoulli Trials: https://www.codechef.com/wiki/tutorial-expectation
 - OEIS: http://oeis.org/
+
+More Questions:
+- SPOJ JULKA: https://www.spoj.com/problems/JULKA/
+- Hair Counting Problem: https://www.mathscareers.org.uk/article/pigeonhole-principle/
+- Prime looking number: https://www.cut-the-knot.org/arithmetic/combinatorics/InclExclEx.shtml
+- Coupon collector problem: https://www.youtube.com/watch?v=3mu47FWEuqA
+- SPOJ FAVDICE: https://www.spoj.com/problems/FAVDICE/
+- SPOJ FIBOSUM: https://www.spoj.com/problems/FIBOSUM/
+- Modulo Sum Codeforces: https://codeforces.com/problemset/problem/577/B
+- Tavas and SaDDas Codeforces: https://codeforces.com/problemset/problem/535/B
+- Summing Sums SPOJ: https://www.spoj.com/problems/SUMSUMS/
+- Marbles SPOJ: https://www.spoj.com/problems/MARBLES/

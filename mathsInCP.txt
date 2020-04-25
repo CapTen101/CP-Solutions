@@ -1,4 +1,5 @@
-// From the Youtube Video: https://www.youtube.com/watch?v=GwVDCi8CCAI
+==>From the Youtube Video: https://www.youtube.com/watch?v=GwVDCi8CCAI
+
 - Birthday Paradox Problem: https://www.geeksforgeeks.org/birthday-paradox/
 - Codeforces Link: https://codeforces.com/problemset?tags=math,brute%20force
 - Big Integer: https://www.geeksforgeeks.org/biginteger-class-in-java/
@@ -17,7 +18,8 @@
 - Mathematical expectation and Bernoulli Trials: https://www.codechef.com/wiki/tutorial-expectation
 - OEIS: http://oeis.org/
 
-More Questions:
+==>More Questions:
+
 - SPOJ JULKA: https://www.spoj.com/problems/JULKA/
 - Hair Counting Problem: https://www.mathscareers.org.uk/article/pigeonhole-principle/
 - Prime looking number: https://www.cut-the-knot.org/arithmetic/combinatorics/InclExclEx.shtml
@@ -28,3 +30,46 @@ More Questions:
 - Tavas and SaDDas Codeforces: https://codeforces.com/problemset/problem/535/B
 - Summing Sums SPOJ: https://www.spoj.com/problems/SUMSUMS/
 - Marbles SPOJ: https://www.spoj.com/problems/MARBLES/
+
+==>NEXT is the Number Theory Video: https://www.youtube.com/watch?v=gREDFgHL9m4
+
+Topics Discussed:
+
+Euclid Algo
+Extended Euclid Algo
+Sieve of Eratosthenes
+Segmented Sieve
+Linear Diophantine Equation
+Chinese Remainder Theorem
+Lucas theorem
+Wilson theorem
+Totient Function
+FT theorem
+Miller - Rabin Primality test.
+
+More Questions:
+
+- https://www.spoj.com/problems/AMR11E/ - easy sieve 
+- https://www.spoj.com/problems/GCDEX/  - read this - https://discuss.codechef.com/t/a-danc...
+- https://www.spoj.com/problems/ANARC09C/
+- https://www.spoj.com/problems/CPRIME/...
+- https://www.spoj.com/problems/CSQUARE/
+- https://www.spoj.com/problems/NFACTOR/
+- https://www.spoj.com/problems/CUBEFR/
+- https://www.spoj.com/problems/DCEPC13D/ - this is CRT + Lucas + Fermat
+- https://www.codechef.com/problems/SPOTWO
+- https://www.spoj.com/problems/DCEPC11B/ - Wilson theorem
+- https://www.spoj.com/problems/AMR10C/ - factorisation
+- https://www.spoj.com/problems/ALICESIE/ -formula
+- https://www.spoj.com/problems/FACTCG2/ - factorisation
+- https://www.spoj.com/problems/FACTMUL/ - CRT
+- https://www.spoj.com/problems/PRIME1/ - Segmented Sieve
+- https://www.spoj.com/problems/TDKPRIME/ - simple sieve with precompute
+- https://www.spoj.com/problems/TDPRIMES/ - same as above
+- https://www.spoj.com/problems/FINDPRM/
+- https://www.spoj.com/problems/LCPCP2/ - very simple
+- https://www.spoj.com/problems/GCD2/ - tricky
+- https://www.spoj.com/problems/NDIVPHI/ - use BigInteger
+- https://www.spoj.com/problems/DIVSUM/ - pre computation or multiplication formula
+- https://www.spoj.com/problems/DIVSUM2/ - Multiplication formula
+- https://www.spoj.com/problems/MAIN74/ - find first few values and observe the pattern

@@ -47,6 +47,8 @@ Totient Function
 FT theorem
 Miller - Rabin Primality test.
 
+First solve codeforces Level A Questions and then solve below Questions...
+
 More Questions:
 
 - https://www.spoj.com/problems/AMR11E/ - easy sieve 

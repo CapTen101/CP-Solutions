@@ -24,39 +24,18 @@ int main()
         if (x == 0 || y == 0)
         {
             if (x == 0)
-            {
-                if (a < b)
-                    cout << y * a << "\n";
-                else
-                    cout << y * b << "\n";
-            }
+                cout << y * a << "\n";
             else
-            {
-                if (a < b)
-                    cout << x * a << "\n";
-                else
-                    cout << x * b << "\n";
-            }
+                cout << x * a << "\n";
         }
         else
         {
             if (x < y)
-            {
-                // cout << x * b + (y - x) * a << "\n";
                 cout << (y - x) * a + x * b << "\n";
-            }
             else if (x > y)
-            {
-                // cout << y * a + (x - y) * b << "\n";
                 cout << (x - y) * a + y * b << "\n";
-            }
             else if (x == y)
-            {
-                // if (2 * x * a < x * b)
-                //     cout << 2 * x * b << "\n";
-                // else
-                    cout << x * b << "\n";
-            }
+                cout << x * b << "\n";
         }
     }
 }

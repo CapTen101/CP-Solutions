@@ -1,3 +1,4 @@
+// ACCEPTED
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -31,9 +32,21 @@ int main()
         else
         {
             if (x < y)
-                cout << (y - x) * a + x * b << "\n";
+            {
+                if (2 * a < b)
+                    cout << (x + y) * a << "\n";
+                else
+                    cout << (y - x) * a + x * b << "\n";
+            }
+
             else if (x > y)
-                cout << (x - y) * a + y * b << "\n";
+            {
+                if (2 * a < b)
+                    cout << (x + y) * a << "\n";
+                else
+                    cout << (x - y) * a + y * b << "\n";
+            }
+
             else if (x == y)
             {
                 if (2 * a > b)

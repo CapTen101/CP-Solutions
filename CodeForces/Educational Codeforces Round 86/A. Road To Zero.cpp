@@ -35,7 +35,12 @@ int main()
             else if (x > y)
                 cout << (x - y) * a + y * b << "\n";
             else if (x == y)
-                cout << x * b << "\n";
+            {
+                if (2 * a > b)
+                    cout << x * b << "\n";
+                else
+                    cout << 2 * x * a << "\n";
+            }
         }
     }
 }

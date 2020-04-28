@@ -7,11 +7,10 @@ using namespace std;
 #define ll long long int 
 #define l long int
 #define pb push_back
-#define MOD 1000000007
+const ll mod = 1000000007;
 
 
 int main(){
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
     
 }

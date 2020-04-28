@@ -88,7 +88,6 @@ Some basic concepts that you should learn are
 - Search techniques: Binary search, Ternary search and Meet in the middle.
 - Data structures (Basic): Stacks, Queues, Trees and Heaps.
 - Data structures (Advanced): Trie, Segment trees, Fenwick tree or Binary indexed tree(BIT), Disjoint data structures.
-- Strings: Knuth Morris Pratt(KMP), Z algorithm, Suffix arrays/Suffix trees. These are bit advanced algorithms.
+- Strings: Manachar’s Algorithm, Knuth Morris Pratt(KMP), Z algorithm, Suffix arrays/Suffix trees. These are bit advanced algorithms.
 - Computational geometry: Graham-Scan for convex hull, Line sweep.
 - Game theory: Basic principles of Nim game, Grundy numbers, Sprague-Grundy theorem.
-

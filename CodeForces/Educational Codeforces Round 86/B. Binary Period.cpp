@@ -2,7 +2,7 @@
 using namespace std;
 
 #define my_sizeof(type) ((char *)(&type + 1) - (char *)(&type))
-#define loop(typeofx, x, start, end) for (typeofx x = start; x < end; ++x)
+#define loop(typeofx, x, start, end) for (typeofx x = start; x < end; x++)
 #define listTraverse(datatypeoflist, x, startList, endList) for (list<datatypeoflist>::iterator x = startList; x != endList; ++x)
 #define ll long long int
 #define l long int
@@ -11,16 +11,15 @@ using namespace std;
 
 int main()
 {
-    string s = "hacker";
-    int k = 2;
-    string newstring;
-    newstring.resize(s.length());
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    loop(int, i, 0, s.length())
+    int t;
+    cin >> t;
+
+    while (t--)
     {
-        newstring[(i + k) % s.length()] = s[i];
+        string t;
+        cin >> t;
     }
-
-    newstring[s.length()] = '\0';
-    cout << newstring;
 }

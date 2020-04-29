@@ -1,3 +1,5 @@
+// ACCEPTED
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -13,41 +15,25 @@ int main()
 {
     ios_base::sync_with_stdio(false);
 
-    int n;
-    cin >> n;
-    vector<ll> a(n), b(n), c(n);
+    int n, m, a, b;
+    cin >> n >> m >> a >> b;
 
-    loop(int, i, 0, n)
+    if (b / m < a)
     {
-        cin >> a[i];
-    }
-    loop(int, i, 0, n)
-    {
-        cin >> b[i];
-    }
-
-    loop(int, i, 0, n)
-    {
-        c[i] = a[i] - b[i];
-    }
-
-    sort(c.begin(), c.end());
-
-    int s = 0;
-    int e = n - 1;
-    ll ans = 0;
-
-    loop(int, i, 0, n)
-    {
-        if (c[s] + c[e] > 0)
-        {
-            ans += e - s;
-            e--;
-        }
+        if (n % m == 0)
+            cout << (b * (n / m));
         else
         {
-            s++;
+            if (b < a * (n % m))
+                cout << (b * (n / m)) + b;
+            else
+            {
+                cout << (b * (n / m)) + a * (n % m);
+            }
         }
     }
-    cout << ans << "\n";
+    else
+    {
+        cout << a * n;
+    }
 }

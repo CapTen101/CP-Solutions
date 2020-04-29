@@ -11,16 +11,18 @@ using namespace std;
 
 int main()
 {
-    string s = "hacker";
-    int k = 2;
-    string newstring;
-    newstring.resize(s.length());
+    // string s = "hacker";
+    // int k = 2;
+    // string newstring;
+    // newstring.resize(s.length());
 
-    loop(int, i, 0, s.length())
-    {
-        newstring[(i + k) % s.length()] = s[i];
-    }
+    // loop(int, i, 0, s.length())
+    // {
+    //     newstring[(i + k) % s.length()] = s[i];
+    // }
 
-    newstring[s.length()] = '\0';
-    cout << newstring;
+    // newstring[s.length()] = '\0';
+    // cout << newstring;
+
+    cout<<3*(1000/3);
 }

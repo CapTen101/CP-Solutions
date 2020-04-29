@@ -24,5 +24,5 @@ int main()
     // newstring[s.length()] = '\0';
     // cout << newstring;
 
-    cout<<3*(1000/3);
+
 }

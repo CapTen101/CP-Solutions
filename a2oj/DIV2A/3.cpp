@@ -12,4 +12,22 @@ const ll mod = 1000000007;
 int main()
 {
     ios_base::sync_with_stdio(false);
+
+    string s;
+    cin >> s;
+
+    queue<int> q;
+
+    loop(int, i, 0, s.length())
+    {
+        q.push(s[i]);
+    }
+
+    vector<char> ch = {'a', 'b', 'c'};
+
+
+    loop(int, i, 0, s.length())
+    {
+        if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'e' || s[i] == 'u')
+    }
 }

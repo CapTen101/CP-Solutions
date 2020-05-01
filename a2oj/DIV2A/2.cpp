@@ -12,4 +12,18 @@ const ll mod = 1000000007;
 int main()
 {
     ios_base::sync_with_stdio(false);
+
+    int n;
+    cin >> n;
+
+    while (n--)
+    {
+        string s;
+        cin >> s;
+
+        if (s.length() < 11)
+            cout << s << "\n";
+        else
+            cout << s[0] << s.length() - 2 << s[s.length() - 1] << "\n";
+    }
 }

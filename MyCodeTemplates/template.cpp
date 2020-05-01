@@ -5,8 +5,9 @@ using namespace std;
 #define loop(typeofx, x, start, end) for (typeofx x = start; x < end; x++)
 #define listTraverse(datatypeoflist, x, startList, endList) for (list<datatypeoflist>::iterator x = startList; x != endList; ++x)
 #define ll long long int
+#define ull unsigned long long int
 #define l long int
-#define pb push_back
+#define ul unsigned long int
 const ll mod = 1000000007;
 
 int main()

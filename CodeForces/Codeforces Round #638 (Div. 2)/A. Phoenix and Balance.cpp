@@ -5,8 +5,9 @@ using namespace std;
 #define loop(typeofx, x, start, end) for (typeofx x = start; x < end; x++)
 #define listTraverse(datatypeoflist, x, startList, endList) for (list<datatypeoflist>::iterator x = startList; x != endList; ++x)
 #define ll long long int
+#define ull unsigned long long int
 #define l long int
-#define pb push_back
+#define ul unsigned long int
 const ll mod = 1000000007;
 
 int main()
@@ -24,22 +25,33 @@ int main()
 
         loop(int, i, 1, n + 1)
         {
-            w.pb(pow(2, i));
+            w.push_back(pow(2, i));
         }
 
         int s = 0;
         int e = n - 1;
+        ll one = 0, two = 0;
 
-        vector<unsigned ll> one;
-        vector<unsigned ll> two;
-
-        loop(int, i, 0, n)
+        while (s < e)
         {
-            
+            if ((n / 2) % 2 != 0)
+            {
+                if (s == (n / 2) - 1)
+                {
+                    one += w[s];
+                    two += w[s + 1];
+                    break;
+                }
+            }
+            one += w[s];
+            one += w[e];
+            s++;
+            e--;
+            two += w[s];
+            two += w[e];
+            s++;
+            e--;
         }
-
-        if ((n / 2) % 3 != 0)
-        {
-        }
+        cout << abs(one - two) << "\n";
     }
 }

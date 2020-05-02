@@ -28,8 +28,7 @@ int main()
             w.push_back(pow(2, i));
         }
 
-        int s = 0;
-        int e = n - 1;
+        int s = 0, e = n - 1;
         ll one = 0, two = 0;
 
         while (s < e)

@@ -29,7 +29,22 @@ int main()
 
         if (n == 1)
         {
-            cout << 1;
+            cout << "1 1"
+                 << "\n";
+            continue;
+        }
+        else if (n == 2)
+        {
+            if (x[1] - x[0] > 2)
+                cout << "1 1"
+                     << "\n";
+            else
+                cout << "1 2"
+                     << "\n";
+        }
+        else
+        {
+            
         }
     }
 }

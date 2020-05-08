@@ -8,6 +8,7 @@ using namespace std;
 #define ull unsigned long long int
 #define l long int
 #define ul unsigned long int
+#define start int t;cin>>t; while(t--)
 const ll mod = 1000000007;
 
 int main()

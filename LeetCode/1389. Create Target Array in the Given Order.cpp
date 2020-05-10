@@ -22,18 +22,16 @@ public:
         vector<int> target(nums.size());
         fill(target.begin(), target.end(), -1);
 
+        fill(target.begin(), target.end(), -1);
+
         for (int i = 0; i < nums.size(); i++)
         {
-            if(target[i]==-1) target[index[i]] = nums[i];
+            if (target[i] == -1)
+                target[index[i]] = nums[i];
             else
             {
-                
             }
-            
-            
         }
-
-        return target;
     }
 };
 

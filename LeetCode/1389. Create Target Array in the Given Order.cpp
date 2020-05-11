@@ -19,9 +19,7 @@ class Solution
 public:
     vector<int> createTargetArray(vector<int> &nums, vector<int> &index)
     {
-        vector<int> target(nums.size());
-        fill(target.begin(), target.end(), -1);
-
+        vector<int> target(nums.size()); 
         fill(target.begin(), target.end(), -1);
 
         for (int i = 0; i < nums.size(); i++)
@@ -30,8 +28,10 @@ public:
                 target[index[i]] = nums[i];
             else
             {
+                
             }
         }
+        return target;
     }
 };
 

@@ -14,17 +14,18 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
-int count = 0;
+int count1 = 0;
 int power(int x, int n)
 {
-    if (count == n) return;
-        
-    count++;
+    if (count1 == n)
+        return 1;
+
+    count1++;
     return x * power(x, n);
 }
 
 int main()
 {
     ios_base::sync_with_stdio(false);
-    cout<< power(2,3);
+    cout << power(2, 3) << endl;
 }

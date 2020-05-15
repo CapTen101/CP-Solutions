@@ -14,7 +14,19 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+int sum = 0;
+int i = 0;
+int sumarray(int A[], int size)
+{
+    if (i == size)
+        return 0;
+    sum = A[i++] + sumarray(A, size);
+    return sum;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
+    int arr[3] = {1, 2, 3};
+    cout << sumarray(arr, 3);
 }

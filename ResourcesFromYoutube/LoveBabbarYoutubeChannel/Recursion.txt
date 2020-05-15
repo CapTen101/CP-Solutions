@@ -1,0 +1,20 @@
+Programs to practice for recursion:
+
+https://www.geeksforgeeks.org/program-for-factorial-of-a-number/
+https://www.geeksforgeeks.org/sum-array-elements-using-recursion/
+https://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
+https://j2eedev.org/reversing-an-array-using-recursion-in-java/
+https://www.geeksforgeeks.org/replace-all-occurrences-of-pi-with-3-14-in-a-given-string/
+https://www.geeksforgeeks.org/convert-a-string-to-an-integer-using-recursion/
+https://www.geeksforgeeks.org/program-check-array-sorted-not-iterative-recursive/
+https://www.geeksforgeeks.org/binary-search/
+https://www.geeksforgeeks.org/recursive-bubble-sort/
+https://www.geeksforgeeks.org/quick-sort/
+https://www.geeksforgeeks.org/merge-sort/
+https://www.geeksforgeeks.org/reverse-a-stack-using-recursion/
+https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/
+https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+https://www.geeksforgeeks.org/print-subsequences-string/
+https://www.youtube.com/watch?v=keb6rP07Yqg&list=PLTZbNwgO5ebpqWBmBx0lpy9IYFMSQcrL- (Find Path in NXN Maze (Backtracking problem))
+
+More questions in the PDF: (Recursion n Backtracking)

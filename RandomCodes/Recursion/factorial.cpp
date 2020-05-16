@@ -14,7 +14,18 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+ull fact(int n)
+{
+    if (n == 1)
+        return 1;
+    return n * fact(n - 1);
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
+    ull n;
+    cout << "enter n: ";
+    cin >> n;
+    cout << fact(n);
 }

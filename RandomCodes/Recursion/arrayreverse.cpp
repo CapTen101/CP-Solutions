@@ -14,7 +14,29 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+int i = 0;
+void arrayreverse(int A[], int i, int j)
+{
+    if (i < j)
+    {
+        swap(A[i], A[j]);
+        i++;
+        j--;
+        arrayreverse(A, i, j);
+    }
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
+    int arr[3] = {1, 2, 3};
+    int i = 0;
+    int j = 2;
+
+    arrayreverse(arr, 0, 2);
+
+    loop(int, i, 0, 3)
+    {
+        cout << arr[i];
+    }
 }

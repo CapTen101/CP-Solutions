@@ -14,6 +14,25 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+int i = 0;
+string replacepi(string s)
+{
+    string ans;
+    int stringlen = s.length();
+    string si(1, s[i]);
+    string si1(1, s[i + 1]);
+    if (si + si1 = 'pi')
+    {
+
+        ans[i] = '3.';
+        ans[i + 1] = '14';
+    }
+    else
+    {
+        /* code */
+    }
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);

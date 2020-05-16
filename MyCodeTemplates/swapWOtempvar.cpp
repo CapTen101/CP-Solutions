@@ -14,7 +14,17 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+int swapwithouttempvar(int &a, int &b)
+{
+    a = a + b;
+    b = a - b;
+    a = a - b;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
+    int a = 4, b = 100;
+    swap(a, b);
+    cout << a << b;
 }

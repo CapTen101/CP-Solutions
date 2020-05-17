@@ -14,27 +14,23 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
-// vector<int> freshnumber;
-// int i = 0;
-// void strtoint(string s, int i)
-// {
-//     if (i < s.length())
-//     {
-//         freshnumber.push_back(s[i] - '0');
-//         strtoint(s, i + 1);
-//     }
-// }
+int stringtoint(string s)
+{
+    if (s.length() == 1)
+        return s[0] - '0';
 
-// int vectortonum(vector<int> v)
-// {
-//     int
-// }
+    double y = stringtoint(s.substr(1));
 
-int
+    double x = s[0] - '0';
 
-    int
-    main()
+    x = x * pow(10, s.length() - 1) + y;
+
+    return int(x);
+}
+
+int main()
 {
     ios_base::sync_with_stdio(false);
-    string s = "8743718";
+    string s = "8743715";
+    cout << stringtoint(s) << "\n";
 }

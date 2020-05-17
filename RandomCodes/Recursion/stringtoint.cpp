@@ -14,33 +14,27 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
-int i = 0;
-string ans;
-void replacepi(string s, int stringlen)
-{
-    if (i < stringlen)
-    {
-        string si(1, s[i]);
-        string si1(1, s[i + 1]);
-        if (s[i] == 'p' && s[i + 1] == 'i')
-        {
-            ans = ans + "3.14";
-            i++;
-        }
-        else
-        {
-            ans = ans + si;
-        }
+// vector<int> freshnumber;
+// int i = 0;
+// void strtoint(string s, int i)
+// {
+//     if (i < s.length())
+//     {
+//         freshnumber.push_back(s[i] - '0');
+//         strtoint(s, i + 1);
+//     }
+// }
 
-        i++;
-        replacepi(s, stringlen);
-    }
-}
+// int vectortonum(vector<int> v)
+// {
+//     int
+// }
 
-int main()
+int
+
+    int
+    main()
 {
     ios_base::sync_with_stdio(false);
-    string s = "xpix";
-    replacepi(s, s.length());
-    cout << ans;
+    string s = "8743718";
 }

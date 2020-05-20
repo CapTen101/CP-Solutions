@@ -19,10 +19,10 @@ Parent Problems of DP:
 
 
 
-==> 01Knspsack:
+==> 01Knapsack:
 
 - Subset Sum
-- Equal Sum Partition
+- Equal Sum Partition (very similar to Subset Sum Problem)
 - Count of Subset Sum
 - Minimum subset Sum difference
 - Target Sum

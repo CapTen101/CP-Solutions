@@ -14,10 +14,10 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
-bool t[6][12];
-bool subsetsum(int arr[], int size, int sum)
+bool t[6][11];
+bool subsetsum(int arr[], int n, int sum)
 {
-    loop(int, i, 0, size + 1)
+    loop(int, i, 0, n + 1)
     {
         loop(int, j, 0, sum + 1)
         {
@@ -28,7 +28,7 @@ bool subsetsum(int arr[], int size, int sum)
         }
     }
 
-    loop(int, i, 1, size + 1)
+    loop(int, i, 1, n + 1)
     {
         loop(int, j, 1, sum + 1)
         {
@@ -39,16 +39,28 @@ bool subsetsum(int arr[], int size, int sum)
         }
     }
 
-    return t[size][sum];
+    return t[n][sum];
+}
+
+bool equalsumpartition(int arr[], int n)
+{
+    int totalsum = 0;
+    loop(int, i, 0, n) totalsum += arr[i];
+    int halfsum = totalsum / 2;
+    if (totalsum % 2 != 0)
+        return false;
+    else
+        return subsetsum(arr, n, halfsum);
 }
 
 int main()
 {
     ios_base::sync_with_stdio(false);
 
-    int arr[5] = {2, 3, 7, 8, 11};
-    int sum = 11;
-    bool ans = subsetsum(arr, 5, sum);
+    int arr[5] = {1, 2, 0, 3, 100};
+    int sum = 10;
+    bool ans = equalsumpartition(arr, 5);
+
     if (ans)
         cout << "true" << endl;
     else

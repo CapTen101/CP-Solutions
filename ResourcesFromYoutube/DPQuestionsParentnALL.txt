@@ -1,8 +1,7 @@
-Good Article list on DP solutions and tricks:
+#Good Article list on DP solutions and tricks:
 - https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
 
-
-All problems of DP on geeksforgeeks: https://www.geeksforgeeks.org/dynamic-programming/
+#List of All problems of DP on geeksforgeeks: https://www.geeksforgeeks.org/dynamic-programming/
 
 Parent Problems of DP:
 
@@ -21,8 +20,8 @@ Parent Problems of DP:
 
 ==> 01Knapsack:
 
-- Subset Sum
-- Equal Sum Partition (very similar to Subset Sum Problem)
+- Subset Sum...done
+- Equal Sum Partition (very similar to Subset Sum Problem)..done
 - Count of Subset Sum
 - Minimum subset Sum difference
 - Target Sum

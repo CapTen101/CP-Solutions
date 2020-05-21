@@ -1,0 +1,5 @@
+This is the list of articles missing in GFG(which I can write):
+
+- Cerr stream object in c++
+- Recursive solution of array reversal
+- Maybe article about Android 10 EACCESS error

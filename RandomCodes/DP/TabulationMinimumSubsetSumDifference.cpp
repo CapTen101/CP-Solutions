@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <vector>
 using namespace std;
 
 #define my_sizeof(type) ((char *)(&type + 1) - (char *)(&type))
@@ -15,11 +14,13 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
-bool subsetsum(int arr[], int n, ll sum)
-{
-    bool t[n + 1][sum + 1];
+vector<bool> vans;
 
-    loop(int, i, 0, n + 1)
+void subsetsum(int arr[], int size, int sum)
+{
+    bool t[size + 1][sum + 1];
+
+    loop(int, i, 0, size + 1)
     {
         loop(int, j, 0, sum + 1)
         {
@@ -30,7 +31,7 @@ bool subsetsum(int arr[], int n, ll sum)
         }
     }
 
-    loop(int, i, 1, n + 1)
+    loop(int, i, 1, size + 1)
     {
         loop(int, j, 1, sum + 1)
         {
@@ -41,18 +42,40 @@ bool subsetsum(int arr[], int n, ll sum)
         }
     }
 
-    return t[n][sum];
+    loop(int, i, 0, sum + 1)
+    {
+        vans.push_back(t[size][i]);
+    }
 }
 
-bool equalsumpartition(int arr[], int n)
+int MinSubsetDiff(int arr[], int n)
 {
-    ll totalsum = 0;
-    loop(int, i, 0, n) totalsum += arr[i];
-    ll halfsum = totalsum / 2;
-    if (totalsum % 2 != 0)
-        return false;
+    ll range = 0;
+    vector<int> ans;
+    loop(int, i, 0, n) range += arr[i];
+    ll halfrange = range / 2 + 1;
+
+    subsetsum(arr, n, range);
+
+    if (halfrange % 2 == 0)
+    {
+        loop(int, i, 0, halfrange)
+        {
+            if (vans[i])
+                ans.push_back(i);
+        }
+    }
+
     else
-        return subsetsum(arr, n, halfsum);
+    {
+        loop(int, i, 0, halfrange)
+        {
+            if (vans[i])
+                ans.push_back(i);
+        }
+    }
+
+    return (range - (2 * ans[ans.size() - 1]));
 }
 
 int main()
@@ -67,11 +90,6 @@ int main()
 
         loop(int, i, 0, n) cin >> arr[i];
 
-        bool ans = equalsumpartition(arr, n);
-
-        if (ans)
-            cout << "YES" << endl;
-        else
-            cout << "NO" << endl;
+        cout << MinSubsetDiff(arr, n) << endl;
     }
 }

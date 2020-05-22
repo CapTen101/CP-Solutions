@@ -24,5 +24,6 @@ int main()
     // newstring[s.length()] = '\0';
     // cout << newstring;
 
-
+    unsigned ll i = INT_MAX;
+    cout << i;
 }

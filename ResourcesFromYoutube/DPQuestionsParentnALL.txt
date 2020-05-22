@@ -20,10 +20,10 @@ Parent Problems of DP:
 
 ==> 01Knapsack:
 
-- Subset Sum...done
-- Equal Sum Partition (very similar to Subset Sum Problem)..done
-- Count of Subset Sum
-- Minimum subset Sum difference
+- Subset Sum...done (https://www.geeksforgeeks.org/subset-sum-problem-dp-25/)
+- Equal Sum Partition (very similar to Subset Sum Problem)..done (https://www.geeksforgeeks.org/partition-problem-dp-18/)
+- Count of Subset Sum...done (https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x/)
+- Minimum subset Sum difference (https://www.geeksforgeeks.org/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/)
 - Target Sum
 - no. of subset with given difference
 

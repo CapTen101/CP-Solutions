@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define my_sizeof(type) ((char *)(&type + 1) - (char *)(&type))
 #define loop(typeofx, x, start, end) for (typeofx x = start; x < end; x++)
 #define listTraverse(datatypeoflist, x, startList, endList) for (list<datatypeoflist>::iterator x = startList; x != endList; ++x)
 #define ll long long int
@@ -14,10 +13,9 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
-vector<bool> vans;
-
-void subsetsum(int arr[], int size, int sum)
+int subsetsum(int arr[], int size, int sum)
 {
+    vector<int> vans;
     bool t[size + 1][sum + 1];
 
     loop(int, i, 0, size + 1)
@@ -35,53 +33,38 @@ void subsetsum(int arr[], int size, int sum)
     {
         loop(int, j, 1, sum + 1)
         {
-            if (arr[i - 1] <= sum)
+            if (arr[i - 1] <= j)
                 t[i][j] = (t[i - 1][j - arr[i - 1]]) || (t[i - 1][j]);
             else
                 t[i][j] = t[i - 1][j];
         }
     }
 
-    loop(int, i, 0, sum + 1)
+    for (int i = 0; i <= sum / 2; i++)
     {
-        vans.push_back(t[size][i]);
+        int k = t[size][i];
+        if (k == 1)
+            vans.push_back(i);
     }
+
+    int mn = INT_MAX;
+    for (int i = 0; i < vans.size(); i++)
+    {
+        mn = min(mn, sum - (2 * vans[i]));
+    }
+    return mn;
 }
 
 int MinSubsetDiff(int arr[], int n)
 {
-    ll range = 0;
-    vector<int> ans;
+    int range = 0;
     loop(int, i, 0, n) range += arr[i];
-    ll halfrange = range / 2 + 1;
-
-    subsetsum(arr, n, range);
-
-    if (halfrange % 2 == 0)
-    {
-        loop(int, i, 0, halfrange)
-        {
-            if (vans[i])
-                ans.push_back(i);
-        }
-    }
-
-    else
-    {
-        loop(int, i, 0, halfrange)
-        {
-            if (vans[i])
-                ans.push_back(i);
-        }
-    }
-
-    return (range - (2 * ans[ans.size() - 1]));
+    return subsetsum(arr, n, range);
 }
 
 int main()
 {
     ios_base::sync_with_stdio(false);
-
     start
     {
         int n;

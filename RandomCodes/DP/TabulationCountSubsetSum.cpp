@@ -14,7 +14,7 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
-int t[6][12];
+int t[5][5];
 int countsubsetsum(int arr[], int n, int sum)
 {
     loop(int, i, 0, n + 1)
@@ -32,7 +32,7 @@ int countsubsetsum(int arr[], int n, int sum)
     {
         loop(int, j, 1, sum + 1)
         {
-            if (arr[i - 1] <= sum)
+            if (arr[i - 1] <= j)
                 t[i][j] = t[i - 1][j - arr[i - 1]] + t[i - 1][j];
             else
                 t[i][j] = t[i - 1][j];
@@ -46,8 +46,8 @@ int main()
 {
     ios_base::sync_with_stdio(false);
 
-    int arr[5] = {2, 3, 7, 0, 11};
-    int sum = 11;
-    int ans = countsubsetsum(arr, 5, sum);
+    int arr[4] = {1, 1, 2, 3};
+    int sum = 4;
+    int ans = countsubsetsum(arr, 4, sum);
     cout << ans << endl;
 }

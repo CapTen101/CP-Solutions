@@ -1,5 +1,5 @@
 This is the list of articles missing in GFG(which I can write):
 
-- Cerr stream object in c++
+- Cerr stream object in c++ ... done!
 - Recursive solution of array reversal
-- Maybe article about Android 10 EACCESS error
+- Android 10 open failed: EACCES (Permission denied) ...done!

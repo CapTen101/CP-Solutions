@@ -24,6 +24,9 @@ int main()
     // newstring[s.length()] = '\0';
     // cout << newstring;
 
-    unsigned ll i = INT_MAX;
-    cout << i;
+    // unsigned ll i = INT_MAX;
+    // cout << i;
+    string s;
+    getline(cin, s);
+    cout << s;
 }

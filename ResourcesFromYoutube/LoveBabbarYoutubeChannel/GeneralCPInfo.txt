@@ -91,3 +91,25 @@ Some basic concepts that you should learn are
 - Strings: Manachar’s Algorithm, Knuth Morris Pratt(KMP), Z algorithm, Suffix arrays/Suffix trees. These are bit advanced algorithms.
 - Computational geometry: Graham-Scan for convex hull, Line sweep.
 - Game theory: Basic principles of Nim game, Grundy numbers, Sprague-Grundy theorem.
+
+
+List of topics in order:
+
+    Recursion + Backtracking
+    Time + Space Complexity
+    Arrays
+    Strings
+    Bits Manipulation
+    Mathematics + Combinatorics
+    Divide & Conquer + Sorting 
+    Binary Searching + Two Pointer algorithm
+    LinkedList
+    HashMap + Set
+    Stacks + Queues
+    Heaps + Priority Queues
+    Binary Tree + Binary Search Tree
+    Greedy Programming
+    Dynamic Programming
+    Graph traversal algorithms
+    Tries
+    Segment Tree + Fenwick Tree

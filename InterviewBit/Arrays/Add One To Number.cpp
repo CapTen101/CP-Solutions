@@ -15,13 +15,10 @@ const ll mod = 1000000007;
 
 vector<int> plusOne(vector<int> &A)
 {
-
-    vector<int> result;
+    vector<int> result, B;
 
     for (int i = A.size() - 1; i >= 0; i--)
-    {
         result.push_back(A[i]);
-    }
 
     for (int i = 0; i < result.size(); i++)
     {
@@ -40,12 +37,8 @@ vector<int> plusOne(vector<int> &A)
         break;
     }
 
-    vector<int> B;
-
     for (int i = result.size() - 1; i >= 0; i--)
-    {
         B.push_back(result[i]);
-    }
 
     int nz;
 
@@ -61,9 +54,8 @@ vector<int> plusOne(vector<int> &A)
     result.clear();
 
     for (int i = nz; i < B.size(); i++)
-    {
         result.push_back(B[i]);
-    }
+
     return result;
 }
 

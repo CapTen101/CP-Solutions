@@ -1,0 +1,4 @@
+beginner backtracking problems:
+
+- rat in a maze.
+- equal sum partition problem

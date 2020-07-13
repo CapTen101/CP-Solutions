@@ -15,7 +15,18 @@ const ll mod = 1000000007;
 
 vector<long long> reverseInGroups(vector<long long> mv, int n, int k)
 {
-    vector<int> v;
+    for (int i = 0; i < n; i += k)
+    {
+        long long left = i;
+        long long right = min(i + k - 1, n - 1);
+
+        while (left < right)
+        {
+            swap(mv[left++], mv[right--]);
+        }
+    }
+
+    return mv;
 }
 
 int main()

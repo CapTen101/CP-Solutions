@@ -15,6 +15,28 @@ const ll mod = 1000000007;
 
 int majorityWins(int arr[], int n, int x, int y)
 {
+    int cx = 0, cy = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == x)
+            cx++;
+        else if (arr[i] == y)
+            cy++;
+    }
+
+    if (cy == cx)
+    {
+        if (x <= y)
+            return x;
+        else
+            return y;
+    }
+
+    else if (cx > cy)
+        return x;
+
+    else if (cy > cx)
+        return y;
 }
 
 // { Driver Code Starts.
@@ -36,6 +58,4 @@ int main()
         cin >> x >> y;                              // input x and y
         cout << majorityWins(arr, n, x, y) << endl; //calling the function that you complete
     }
-
-    return 0;
 } // } Driver Code Ends

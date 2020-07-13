@@ -15,6 +15,7 @@ const ll mod = 1000000007;
 
 vector<long long> reverseInGroups(vector<long long> mv, int n, int k)
 {
+    vector<int> v;
 }
 
 int main()

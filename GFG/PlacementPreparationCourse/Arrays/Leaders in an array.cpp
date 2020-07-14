@@ -4,10 +4,20 @@ using namespace std;
 // Function to find the leaders in an array of size n
 vector<int> leader(int arr[], int n)
 {
-    vector<int> leaders;
+    int maxnum = arr[n - 1];
+    int temp = maxnum;
 
-    for (int i = n - 1; i >= 0; i++)
+    vector<int> leader;
+    leader.push_back(arr[n - 1]);
+
+    for (int i = n - 1; i >= 0; i--)
     {
+        if (temp > maxnum)
+        {
+            maxnum = temp;
+            leader.push_back(maxnum);
+        }
+        temp = max(arr[i], temp);
     }
 }
 

@@ -1,24 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+vector<int> reversearray(vector<int> v)
+{
+    for (int i = 0; i < v.size() / 2; i++)
+    {
+        swap(v[i], v[v.size() - 1 - i]);
+    }
+
+    return v;
+}
+
 // Function to find the leaders in an array of size n
 vector<int> leader(int arr[], int n)
 {
     int maxnum = arr[n - 1];
-    int temp = maxnum;
 
     vector<int> leader;
     leader.push_back(arr[n - 1]);
 
-    for (int i = n - 1; i >= 0; i--)
+    for (int i = n - 2; i >= 0; i--)
     {
-        if (temp > maxnum)
+        if (arr[i] >= maxnum)
         {
-            maxnum = temp;
+            maxnum = arr[i];
             leader.push_back(maxnum);
         }
-        temp = max(arr[i], temp);
     }
+
+    vector<int> result = reversearray(leader);
+    return result;
 }
 
 int main()

@@ -25,5 +25,17 @@ int main()
 // Function to find the transition point
 int transitionPoint(int arr[], int n)
 {
-    // code here
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == 1)
+        {
+            if (i == 0)
+                return 0;
+
+            return i;
+        }
+
+        if (i == n - 1)
+            return -1;
+    }
 }

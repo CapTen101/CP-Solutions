@@ -10,7 +10,7 @@ void subarraySum(int arr[], int n, int s)
 
     for (int i = 0; i < n; i++)
     {
-        // sum += arr[left];
+        sum += arr[left];
         if (sum < s)
         {
             right++;

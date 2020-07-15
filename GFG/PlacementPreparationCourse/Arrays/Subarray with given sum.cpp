@@ -6,19 +6,22 @@ using namespace std;
 // n: size of array
 void subarraySum(int arr[], int n, int s)
 {
-    int left = 0, sum = 0, right = 0;
-
+    int left = 0, right = 0;
+    int sum = 0;
+    sum += arr[left];
     for (int i = 0; i < n; i++)
     {
-        sum += arr[left];
         if (sum < s)
         {
             right++;
+            sum += arr[right];
+            continue;
         }
         else if (sum > s)
         {
             sum -= arr[left];
             left++;
+            continue;
         }
         else if (sum == s)
         {

@@ -5,12 +5,9 @@ void subarraySum(int arr[], int n, long long s)
 {
     int left = 0, right = 0;
     long long sum = 0;
-
+    sum += arr[0];
     do
     {
-        if (left == 0)
-            sum += arr[0];
-
         if (sum < s)
         {
             right++;
@@ -28,7 +25,7 @@ void subarraySum(int arr[], int n, long long s)
             cout << left + 1 << " " << right + 1;
             return;
         }
-    } while (left <= right && left < n && right < n);
+    } while (left < n && right < n);
 
     cout << -1;
     return;

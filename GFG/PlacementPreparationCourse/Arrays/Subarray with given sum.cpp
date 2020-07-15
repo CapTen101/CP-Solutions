@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Function to find the subarray with given sum k
-// arr: input array
-// n: size of array
-void subarraySum(int arr[], int n, int s)
+void subarraySum(int arr[], int n, long long s)
 {
     int left = 0, right = 0;
-    int sum = 0;
-    sum += arr[left];
-    for (int i = 0; i < n; i++)
+    long long sum = 0;
+
+    do
     {
+        if (left == 0)
+            sum += arr[0];
+
         if (sum < s)
         {
             right++;
@@ -23,12 +23,12 @@ void subarraySum(int arr[], int n, int s)
             left++;
             continue;
         }
-        else if (sum == s)
+        if (sum == s)
         {
             cout << left + 1 << " " << right + 1;
             return;
         }
-    }
+    } while (left <= right && left < n && right < n);
 
     cout << -1;
     return;

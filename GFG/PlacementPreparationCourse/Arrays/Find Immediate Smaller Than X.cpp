@@ -1,42 +1,30 @@
-// { Driver Code Starts
-//Initial Template for C++
-
 #include <bits/stdc++.h>
 using namespace std;
 
-// } Driver Code Ends
-
-//User function Template for C++
-
-// User function to complete
-// arr[]: input array
-// n: size of array
-// k: find element smaller and closest to it.
 int immediateSmaller(int arr[], int n, int x)
 {
-    // your code here
+    int mindiff, pos;
 
-    int mindiff, temp = -1;
-
-    mindiff = x - arr[0];
+    mindiff = INT_MAX;
 
     for (int i = 0; i < n; i++)
     {
         if ((x - arr[i]) <= 0)
             continue;
         else
-            temp = x - arr[i];
-
-        mindiff = min(temp, mindiff);
-
-        if (i == n - 1)
-            return x - mindiff;
+        {
+            mindiff = min(x - arr[i], mindiff);
+            if (mindiff == (x - arr[i]))
+                pos = i;
+        }
     }
 
-    return -1;
-}
+    if (mindiff != INT_MAX)
+        return arr[pos];
 
-// { Driver Code Starts.
+    else
+        return -1;
+}
 
 int main()
 {
@@ -65,4 +53,3 @@ int main()
 
     return 0;
 }
-// } Driver Code Ends

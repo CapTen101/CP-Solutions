@@ -39,4 +39,21 @@ int main()
 int firstRepeated(int arr[], int n)
 {
     //code here
+    int minindex = -1;
+
+    set<int> myset;
+
+    for (int i = n - 1; i >= 0; i--)
+    {
+        if (myset.find(arr[i]) != myset.end())
+            minindex = i;
+
+        else
+            myset.insert(arr[i]);
+    }
+
+    if (minindex != -1)
+        return minindex + 1;
+    else
+        return -1;
 }

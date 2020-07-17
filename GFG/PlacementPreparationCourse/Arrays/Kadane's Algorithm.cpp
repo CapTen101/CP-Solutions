@@ -9,7 +9,21 @@ using namespace std;
 // n: size of array
 int maxSubarraySum(int arr[], int n)
 {
-    // Your code here
+    int mth = 0;
+    int mtn = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        mth += arr[i];
+
+        if (mth < 0)
+            mth = 0;
+
+        else if (mth > mtn)
+            mtn = mth;
+    }
+
+    return mtn;
 }
 
 // { Driver Code Starts.

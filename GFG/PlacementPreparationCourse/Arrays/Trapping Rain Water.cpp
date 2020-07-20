@@ -10,17 +10,39 @@ using namespace std;
 // n: size of array
 int trappingWater(int arr[], int n)
 {
+    int water, l, r, lmax, rmax;
 
-    // Your code here
-    int maxh = arr[0], water = 0;
+    l = 0;
+    r = n - 1;
+    water = 0;
+    lmax = 0;
+    rmax = 0;
 
-    for (int i = 0; i < n; i++)
+    while (l <= r)
     {
-        maxh = max(maxh, arr[i]);
-
-        if (arr[i] <= maxh)
+        if (arr[l] < arr[r])
         {
-            water += (maxh - arr[i]);
+            if (arr[l] > lmax)
+            {
+                lmax = arr[l];
+            }
+            else
+            {
+                water += (lmax - arr[l]);
+            }
+            l++;
+        }
+        else
+        {
+            if (arr[r] > rmax)
+            {
+                rmax = arr[r];
+            }
+            else
+            {
+                water += (rmax - arr[r]);
+            }
+            r--;
         }
     }
 

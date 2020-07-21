@@ -10,6 +10,30 @@ using namespace std;
 int findMissing(int arr[], int n)
 {
     // Your code here
+    set<int> s;
+    bool found;
+    int num = 1;
+
+    for (int i = 0; i < n; i++)
+    {
+        s.insert(arr[i]);
+    }
+
+    do
+    {
+        if (s.find(num) != s.end())
+        {
+            found = 1;
+        }
+        else
+        {
+            found = 0;
+            return num;
+        }
+
+        num++;
+
+    } while (found);
 }
 
 // { Driver Code Starts.

@@ -1,9 +1,9 @@
-#Good Article list on DP solutions and tricks:
+# Good Article list on DP solutions and tricks:
 - https://leetcode.com/discuss/general-discussion/458695/Dynamic-Programming-Patterns
 
-#List of All problems of DP on geeksforgeeks: https://www.geeksforgeeks.org/dynamic-programming/
+# List of All problems of DP on geeksforgeeks: https://www.geeksforgeeks.org/dynamic-programming/
 
-Parent Problems of DP:
+### Parent Problems of DP:
 
 - 01knapsack(6) :: geeksforgeeks(https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/)
 - Unbounded Knapsack(5)
@@ -18,10 +18,10 @@ Parent Problems of DP:
 
 
 
-==> 01Knapsack:
+##### 01Knapsack:
 
 - Subset Sum...done (https://www.geeksforgeeks.org/subset-sum-problem-dp-25/)
-- Equal Sum Partition (very similar to Subset Sum Problem)..done (https://www.geeksforgeeks.org/partition-problem-dp-18/)
+- Equal Sum Partition (very similar to Subset Sum Problem)..done (https://www.geeksforgeeks.org/partition-problem-dp-18)
 - Count of Subset Sum...done (https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x/)
 - Minimum subset Sum difference...done (https://www.geeksforgeeks.org/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/)
 - Count no. of subset with given difference

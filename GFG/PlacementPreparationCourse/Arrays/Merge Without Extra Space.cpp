@@ -25,7 +25,6 @@ void merge(int arr1[], int arr2[], int n, int m)
 
     for (int i = size; i < max(n, m); i++)
     {
-        a[i] =
     }
 }
 

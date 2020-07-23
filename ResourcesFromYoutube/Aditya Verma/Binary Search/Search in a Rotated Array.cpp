@@ -68,14 +68,6 @@ long search(long arr[], long n, long k)
     {
         index = bin_search_ITERATIVE(arr, 0, minindex - 1, k);
     }
-    // else if (k > arr[minindex])
-    // {
-    //     index = bin_search_ITERATIVE(arr, minindex + 1, n - 1, k);
-    // }
-    // else
-    // {
-    //     index = minindex;
-    // }
 
     long firsthalf = bin_search_ITERATIVE(arr, 0, minindex - 1, k);
     long secondhalf = bin_search_ITERATIVE(arr, minindex + 1, n - 1, k);

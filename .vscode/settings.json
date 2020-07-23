@@ -3,7 +3,8 @@
         "iostream": "cpp",
         "vector": "cpp",
         "deque": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "ostream": "cpp"
     },
     "python.pythonPath": "D:\\DELL\\Softwares\\Python\\python.exe"
 }

@@ -1,9 +1,11 @@
 /*
 Problem Statement: https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array/
-*/
 
-// no. of time sorted array is rotated is "index of the smallest element" {CLOCKWISE ROATION}
-// no. of time sorted array is rotated is "(length of array - index of minimum element) % length of array" {ANTI-CLOCKWISE ROATION}
+
+no. of time sorted array is rotated is "index of the smallest element" {CLOCKWISE ROATION}
+no. of time sorted array is rotated is "(length of array - index of minimum element) % length of array" {ANTI-CLOCKWISE ROATION}
+
+*/
 
 // below is for clockwise rotation:
 // #include <bits/stdc++.h>

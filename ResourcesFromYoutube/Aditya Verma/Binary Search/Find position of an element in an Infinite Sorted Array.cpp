@@ -36,7 +36,7 @@ int bin_search_ITERATIVE(int A[], int left, int right, int k)
 int search(int arr[], int n, int k)
 {
     int l = 0;
-    int r = n - 1;
+    int r = 1;
 
     while (arr[r] < k)
     {

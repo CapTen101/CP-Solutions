@@ -36,7 +36,7 @@ int bin_firstoccurence(int arr[], int l, int r, int k)
 int search(int arr[], int n, int k)
 {
     int l = 0;
-    int r = n - 1;
+    int r = 1;
 
     while (arr[r] != 1)
     {

@@ -11,12 +11,12 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-bool isvalid(int arr[], int n, int k, int mid)
+bool isvalid(long arr[], long n, long k, long mid)
 {
-    int stud = 1;
-    int sum = 0;
+    long long stud = 1;
+    long long sum = 0;
 
-    for (int i = 0; i < n; i++)
+    for (long i = 0; i < n; i++)
     {
         sum += arr[i];
         if (sum > mid)
@@ -31,22 +31,22 @@ bool isvalid(int arr[], int n, int k, int mid)
     return true;
 }
 
-int alloc(int arr[], int n, int k)
+long long alloc(long arr[], long n, long k)
 {
-    int s = *max_element(arr, arr + n);
-    int e;
+    long long s = *max_element(arr, arr + n);
+    long long e = 0;
 
-    for (int i = 0; i < n; i++)
+    for (long i = 0; i < n; i++)
         e += arr[i];
 
-    int res = -1;
+    long res = -1;
 
     if (n < k)
         return -1;
 
     while (s <= e)
     {
-        int mid = s + (e - s) / 2;
+        long mid = s + (e - s) / 2;
 
         if (isvalid(arr, n, k, mid))
         {
@@ -68,19 +68,19 @@ int main()
 
     start
     {
-        int n;
+        long n;
         cin >> n;
 
-        int pg[n];
+        long pg[n];
 
         for (int i = 0; i < n; i++)
         {
             cin >> pg[i];
         }
 
-        int m;
+        long m;
         cin >> m;
 
-        cout << alloc(pg, n, m);
+        cout << alloc(pg, n, m) << endl;
     }
 }

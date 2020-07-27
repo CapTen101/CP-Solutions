@@ -1,19 +1,19 @@
+/*
+Given a bitonic array find the maximum value of the array. An array is said to be bitonic if it has an increasing
+sequence of integers followed immediately by a decreasing sequence of integers.
+
+Problem Statement: https://www.includehelp.com/icp/maximum-value-in-a-bitonic-array.aspx
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
-// #define my_sizeof(type) ((char *)(&type + 1) - (char *)(&type))
-// #define loop(typeofx, x, start, end) for (typeofx x = start; x < end; x++)
-// #define ll long long int
-// #define ull unsigned long long int
-// #define l long int
-// #define ul unsigned long int
 #define start \
     int t;    \
     cin >> t; \
     while (t--)
-// const ll mod = 1000000007;
 
-int peak(int arr[], int n)
+int bitonic(int arr[], int n) // literally he same as the Peak Element question because the bitonic array has a single peak element.
 {
     int l = 0;
     int r = n - 1;

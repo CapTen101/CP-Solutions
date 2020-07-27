@@ -1,3 +1,7 @@
+/*
+Problem Statement link: https://www.geeksforgeeks.org/find-element-bitonic-array/
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -49,6 +53,53 @@ int peak(int arr[], int n)
     }
 
     return -1;
+}
+
+int bin_search_ITERATIVE(int A[], int left, int right, int k)
+{
+    int n = right + 1;
+
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+
+        if (A[mid] == k)
+        {
+            return mid;
+        }
+
+        else if (k > A[mid])
+        {
+            left = mid + 1;
+        }
+
+        else if (k < A[mid])
+        {
+            right = mid - 1;
+        }
+    }
+
+    return -1;
+}
+
+int search_bitonic(int arr[], int n, int k)
+{
+    int peakelement = peak(arr, n);
+    int l = 0;
+    int r = n - 1;
+
+    if (k == arr[peakelement])
+        return peakelement;
+
+    int firsthalf = bin_search_ITERATIVE(arr, 0, peakelement, k);
+    int secondhalf = bin_search_ITERATIVE(arr, peakelement + 1, n - 1, k);
+
+    if (firsthalf != -1)
+        return firsthalf;
+    else if (secondhalf != -1)
+        return secondhalf;
+    else
+        return -1;
 }
 
 int main()

@@ -73,7 +73,15 @@ int main()
     //     }
     // }
 
-    int n = 3;
-    int *ptr = &n;
-    cout << ptr << " " << *ptr << " " << &ptr << " " << *&ptr << endl;
+    // int n = 3;
+    // int *ptr = &n;
+    // cout << ptr << " " << *ptr << " " << &ptr << " " << *&ptr << endl;
+
+    int i = 1, j = 2;
+    pair<int, int> p(i, j);
+
+    i = 10;
+    j = 100;
+
+    cout << p.second;
 }

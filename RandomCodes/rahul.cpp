@@ -12,8 +12,8 @@ int main()
     // cout << i->first << endl;
     // cout << i->second;
 
-    string a = "yoyo";
+    // string a = "yoyo";
 
-    a.append(1, 't');
-    cout << a;
+    // a.append(1, 't');
+    // cout << a;
 }

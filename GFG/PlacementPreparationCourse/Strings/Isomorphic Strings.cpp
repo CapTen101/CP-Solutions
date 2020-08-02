@@ -24,21 +24,32 @@ int main()
     return 0;
 }
 
-#include <bits/stdc++.h>
-
 bool areIsomorphic(string str1, string str2)
 {
-    if (str1.length() != str2.length())
-        return false;
+    int n = str1.length();
+    int m = str2.length();
 
-    // int map[MAX_CHARS];
-    // memset(map, -1, sizeof(map));
+    if (n != m)
+        return 0;
 
-    map<int, int> m;
+    int map[MAX_CHARS]; // for visited chars in str1
+    memset(map, -1, sizeof(map));
 
-    for (int i = 0; i < str1.length(); i++)
+    bool marked[MAX_CHARS] = {0}; // for marking chars in str2
+
+    for (int i = 0; i < n; i++)
     {
-        if (m.find(str1[i]) == m.end()) // if not already present, then insert
-            m.insert(str1[i], str2[i]);
+        if (map[str1[i]] == -1) // if current char of str1 is not mapped
+        {
+            if (marked[str2[i]]) // but str2's current char has been visited, then false
+                return 0;
+
+            map[str1[i]] = str2[i]; // else map the value and mark the str2's char as marked
+            marked[str2[i]] = 1;
+        }
+        else if (map[str1[i]] != str2[i])
+            return 0;
     }
+
+    return 1;
 }

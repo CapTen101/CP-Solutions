@@ -16,8 +16,4 @@ int main()
 
     // a.append(1, 't');
     // cout << a;
-
-    string s = "606";
-
-    cout << (s - '0') * (s[0] - '0');
 }

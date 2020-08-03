@@ -5,39 +5,39 @@ using namespace std;
 
 int SubsequenceLength(string str)
 {
-    // Your code goes here
     int n = str.length();
 
     int l = 0;
     int r = 0;
     int count = 0;
+    int maxcount = 0;
 
     set<int> s;
 
-    while (l <= r)
+    while (l <= r && r < n)
     {
-        // if (s.find(str[r]) == s.end())
-        // {
-        // }
-
-        // if (r == 0)
-        // {
-        //     s.insert(str[r]);
-        //     r++;
-        //     count++;
-        // }
-
         if (s.find(str[r]) == s.end()) // if not found in the set
         {
             s.insert(str[r]);
-            r++;
             count++;
+            r++;
+            maxcount = max(count, maxcount);
         }
         else // if found
         {
-            l = r;
+            l++; // remove the repetitive element from the window
+            count--;
+
+            s.insert(str[r]);
+
+            maxcount = max(count, maxcount);
+            count = 1;
+
+            r++;
         }
     }
+
+    return maxcount;
 }
 
 // { Driver Code Starts.

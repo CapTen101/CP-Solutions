@@ -54,24 +54,36 @@ string multiplyStrings(string s1, string s2)
         }
     }
 
-    int val[n1 + n2] = {0};
+    int val[n1 + n2];
+    memset(val, 0, sizeof(val));
 
     for (int i = n1 - 1; i >= 0; i--)
     {
         for (int j = n2 - 1; j >= 0; j--)
         {
-            int mul = (s1[n1 - 1] - '0') * (s2[n2 - 1] - '0');
+            int mul = (s1[i] - '0') * (s2[j] - '0');
             int sum = mul + val[i + j + 1];
-            val[i + j] += sum / 10;
-            val[i + j + 1] += sum % 10;
+            val[i + j] += sum / 10;    // carry value
+            val[i + j + 1] = sum % 10; // value to be summed up - without carry
         }
     }
 
     for (int v : val)
     {
-        if (v != 0 && res.length() != 0)
+        if (v == 0)
         {
-            res.append(1, v + '0');
+            if (res.length() == 0)
+                continue;
+            else if (res.length() == 1 && res[0] == '-')
+                continue;
+            else if (res[0] == '-' && res.length() > 1)
+                res.append(to_string(v));
+            else if (res.length() != 0)
+                res.append(to_string(v));
+        }
+        else
+        {
+            res.append(to_string(v));
         }
     }
 

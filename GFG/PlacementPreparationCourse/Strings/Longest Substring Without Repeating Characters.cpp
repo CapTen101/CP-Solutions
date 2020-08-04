@@ -6,32 +6,37 @@ using namespace std;
 int SubsequenceLength(string str)
 {
     int n = str.length();
+    // int n = strlen(str);
 
     int l = 0;
     int r = 0;
     int count = 0;
     int maxcount = 0;
 
-    set<int> s;
+    map<char, int> m;
 
     while (l <= r && r < n)
     {
-        if (s.find(str[r]) == s.end()) // if not found in the set
+        if (m.find(str[r]) == m.end()) // if not found in the map
         {
-            s.insert(str[r]);
+            m.insert({str[r], r});
             count++;
             r++;
             maxcount = max(count, maxcount);
         }
         else // if found
         {
-            l++; // remove the repetitive element from the window
-            count--;
-
-            s.insert(str[r]);
-
+            auto samechar = m.find(str[r]);
+            count = samechar->second - l;
             maxcount = max(count, maxcount);
+
+            m.clear();
+
+            l = samechar->second;
+            r = l;
             count = 1;
+
+            m.insert({str[r], r});
 
             r++;
         }
@@ -51,8 +56,8 @@ int main()
     {
         string str;
         getline(cin, str);
+        cout << str;
         cout << SubsequenceLength(str) << "\n";
     }
-    return 0;
 }
 // } Driver Code Ends

@@ -1,4 +1,4 @@
-// { Driver Code Starts
+// **HARD** problem
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -15,12 +15,12 @@ int trappingWater(int arr[], int n)
     l = 0;
     r = n - 1;
     water = 0;
-    lmax = 0;
-    rmax = 0;
+    lmax = 0; // local max from left
+    rmax = 0; // local max from right
 
     while (l <= r)
     {
-        if (arr[l] < arr[r])
+        if (arr[l] < arr[r]) // check whosoever is greater among arr[l] or arr[r]
         {
             if (arr[l] > lmax)
             {
@@ -32,7 +32,7 @@ int trappingWater(int arr[], int n)
             }
             l++;
         }
-        else
+        else // if arr[l] is greater
         {
             if (arr[r] > rmax)
             {

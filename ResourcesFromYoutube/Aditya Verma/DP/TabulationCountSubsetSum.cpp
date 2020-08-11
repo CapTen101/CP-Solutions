@@ -14,7 +14,7 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
-int t[5][5];
+int t[5][5]; // [size+1][sum+1]
 int countsubsetsum(int arr[], int n, int sum)
 {
     loop(int, i, 0, n + 1)

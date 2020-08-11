@@ -42,8 +42,7 @@ int subsetsum(int arr[], int size, int sum)
 
     for (int i = 0; i <= sum / 2; i++)
     {
-        int k = t[size][i];
-        if (k == 1)
+        if (t[size][i])
             vans.push_back(i);
     }
 

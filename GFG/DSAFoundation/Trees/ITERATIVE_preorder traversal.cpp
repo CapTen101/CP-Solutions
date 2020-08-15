@@ -15,21 +15,21 @@ struct Node
 
 void inorder(Node *root)
 {
-    Node *current = root;
+    if (root == NULL)
+        return;
+
     stack<Node *> s;
+    s.push(root);
 
-    while (current != NULL || s.empty() == false)
+    while (s.empty() == false)
     {
-        while (current != NULL)
-        {
-            cout << current->data; // print it first
-            s.push(current);
-            current = current->left; // go all the way to left bottom.
-        }
-
-        current = s.top();        // take the top most element of stack(bottom most element of the tree)
-        s.pop();                  // remove it
-        current = current->right; // shift current to right and repeat the same process
+        Node *current = s.top();
+        cout << current->data;
+        s.pop();
+        if (current->right != NULL)
+            s.push(current->right);
+        if (current->left != NULL)
+            s.push(current->left);
     }
 }
 

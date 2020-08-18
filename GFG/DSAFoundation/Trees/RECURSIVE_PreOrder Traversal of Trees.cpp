@@ -18,6 +18,8 @@ void preorder(Node *root)
     if (root == NULL)
         return;
 
+    Node *current = new Node;
+
     cout << root->data;
     return preorder(root->left);
     return preorder(root->right);

@@ -25,10 +25,10 @@ void inorder(Node *root)
     {
         while (current != NULL)
         {
-            cout << current->data << " ";
+            cout << current->data << " "; // print the current node
             if (current->right != NULL)
-                s.push(current->right);
-            current = current->left;
+                s.push(current->right); // push the right children of the current node no need for lef ones since we are already printing them.
+            current = current->left;    // keep pushing to the left until NULL comes
         }
         if (s.empty() == false)
         {

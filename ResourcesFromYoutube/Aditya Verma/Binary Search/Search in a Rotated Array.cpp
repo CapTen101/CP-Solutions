@@ -10,7 +10,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-// Implemented LINEAR SEARCH algo
+// Implemented LINEAR SEARCH algo to find index of minimum element
 long pivotind(long int arr[], long int n)
 {
     if (n == 1)

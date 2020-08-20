@@ -13,6 +13,7 @@ int main()
     {
         string test = to_string(k);
         num.append(test);
+        k++;
     }
 
     cout << num[n - 1];

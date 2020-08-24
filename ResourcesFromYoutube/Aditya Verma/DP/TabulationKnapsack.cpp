@@ -30,7 +30,7 @@ int TabulationKnapsack(int wt[], int val[], int size, int capacity)
     {
         loop(int, j, 1, capacity + 1)
         {
-            if (wt[i - 1] <= capacity)
+            if (wt[i - 1] <= j) // j will come, IDK WHY but it'll will come
                 t[i][j] = max(val[i - 1] + t[i - 1][j - wt[i - 1]], t[i - 1][j]);
 
             else

@@ -13,7 +13,23 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+void print(int n)
+{
+    //base condition
+    if (n == 1)
+    {
+        cout << 1;
+        return;
+    }
+    // hypothesis
+    print(n - 1);
+
+    // induction - to continue our work and do something
+    cout << n;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
+    print(5);
 }

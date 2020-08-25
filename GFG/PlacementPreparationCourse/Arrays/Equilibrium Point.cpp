@@ -31,38 +31,6 @@ int main()
 // n: size of array
 int equilibriumPoint(long long a[], int n)
 {
-    // int left = 0, right = n - 1;
-    // long long ls = 0, rs = 0;
-
-    // if (n == 1)
-    //     return 1;
-
-    // ls = a[left];
-    // rs = a[right];
-
-    // for (int i = 0; i < n; i++)
-    // {
-    //     if (right - left >= 2)
-    //     {
-    //         if (ls < rs)
-    //         {
-    //             left++;
-    //             ls += a[left];
-    //         }
-
-    //         else if (rs < ls)
-    //         {
-    //             right--;
-    //             rs += a[right];
-    //         }
-
-    //         if ((rs == ls) && (right - left) == 2)
-    //             return left + 2;
-    //     }
-    // }
-
-    // return -1;
-
     long long ls = 0, rs = 0;
     long long sum = 0;
 

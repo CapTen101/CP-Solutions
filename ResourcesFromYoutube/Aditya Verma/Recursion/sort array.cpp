@@ -39,7 +39,7 @@ void sort(vector<int> &arr) // vector is passed as reference
 
     // hypothesis step and induction combined
     int temp = arr[arr.size() - 1]; // save the last value of the array
-    arr.pop_back();                 // pop that element
+    arr.pop_back();                 // pop that last element
     sort(arr);                      // sort the remaining array
 
     insert(arr, temp); // now insert that remaining temp element in the appropriate position

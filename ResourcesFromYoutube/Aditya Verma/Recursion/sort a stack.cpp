@@ -1,23 +1,61 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// #define my_sizeof(type) ((char *)(&type + 1) - (char *)(&type))
-// #define loop(typeofx, x, start, end) for (typeofx x = start; x < end; x++)
-// #define ll long long int
-// #define ull unsigned long long int
-// #define l long int
-// #define ul unsigned long int
 #define start \
     int t;    \
     cin >> t; \
     while (t--)
-// const ll mod = 1000000007;
 
-int sort()
+// CODE IS EXACTLY SAME FOR SORTING A STACK BECAUSE WE CAN TAKE THE END OF ARRAY AS THE OPEN LID OF A STACK.
+// THAT'S IT!
+
+void insert(stack<int> &s, int k)
 {
+    if (s.size() == 0 || s.top() <= k)
+    {
+        s.push(k);
+        return;
+    }
+
+    int temp = s.top();
+    s.pop();
+
+    insert(s, k);
+    s.push(temp);
+}
+
+void sort(stack<int> &s)
+{
+    if (s.size() == 1)
+        return;
+
+    int temp = s.top();
+    s.pop();
+
+    sort(s);
+    insert(s, temp);
 }
 
 int main()
 {
     ios_base::sync_with_stdio(false);
+
+    stack<int> s;
+    s.push(9);
+    s.push(7);
+    s.push(0);
+    s.push(3);
+    s.push(10);
+    s.push(3);
+    s.push(2);
+    s.push(7);
+
+    sort(s);
+
+    while (s.size())
+    {
+        cout << s.top() << " ";
+        s.pop();
+    }
+    cout << "\n";
 }

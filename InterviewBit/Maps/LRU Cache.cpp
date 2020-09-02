@@ -46,34 +46,6 @@ void LRUCache::set(int key, int value)
     if (sizeofcache == 0)
         return; // if the provided max capacity is zero, then return.
 
-    // if (lrucache.find(key) != lrucache.end() && lrucache.size() <= sizeofcache) // if found in the cache and there is some space left in the cache.
-    // {
-    //     if (lrucache.size() == sizeofcache)
-    //     {
-    //         timeorderlist.pop_front();    // removing the least used item from the list
-    //         timeorderlist.push_back(key); // pushing to the last, because the most recent stays in the beginning
-    //         lrucache[key] = value;
-    //         return;
-    //     }
-
-    //     timeorderlist.remove(key);
-    //     timeorderlist.push_back(key); //  insert the most recently used key
-    //     lrucache[key] = value;
-    //     return;
-    // }
-
-    // // remaining case is if key is not found and size <= capacity
-    // if (lrucache.size() == sizeofcache)
-    // {
-    //     lrucache.insert({key, value}); // insert the element
-    //     timeorderlist.pop_front(); // taking out the least used key
-    //     timeorderlist.push_back(key); // inserting the recently added key in the time order
-    //     return;
-
-    // }
-    // lrucache.insert({key, value});
-    // timeorderlist.push_back(key);
-    // return;
     if (lrucache.size() == sizeofcache)
     {
         if (lrucache.find(key) == lrucache.end()) // if not found in the map

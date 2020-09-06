@@ -11,22 +11,9 @@ using namespace std;
 
 int main()
 {
-    // string s = "hacker";
-    // int k = 2;
-    // string newstring;
-    // newstring.resize(s.length());
+    map<int, int> m;
+    m.insert({1, 2});
+    cout << ++m[1];
 
-    // loop(int, i, 0, s.length())
-    // {
-    //     newstring[(i + k) % s.length()] = s[i];
-    // }
-
-    // newstring[s.length()] = '\0';
-    // cout << newstring;
-
-    // unsigned ll i = INT_MAX;
-    // cout << i;
     string s;
-    getline(cin, s);
-    cout << s;
 }

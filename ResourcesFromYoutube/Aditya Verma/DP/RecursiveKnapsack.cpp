@@ -1,29 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define my_sizeof(type) ((char *)(&type + 1) - (char *)(&type))
-#define loop(typeofx, x, start, end) for (typeofx x = start; x < end; x++)
-#define listTraverse(datatypeoflist, x, startList, endList) for (list<datatypeoflist>::iterator x = startList; x != endList; ++x)
-#define ll long long int
-#define ull unsigned long long int
-#define l long int
-#define ul unsigned long int
-#define start \
-    int t;    \
-    cin >> t; \
-    while (t--)
-const ll mod = 1000000007;
-
 int knapsack(int wt[], int val[], int size, int capacity)
 {
-    if (size == 0 || capacity == 0)
+    if (size == 0 || capacity == 0) // smallest valid input of n and w
         return 0;
 
     if (wt[size - 1] <= capacity)
-        return max(val[size - 1] + knapsack(wt, val, size - 1, capacity - wt[size - 1]), knapsack(wt, val, size - 1, capacity));
+        return max(val[size - 1] + knapsack(wt, val, size - 1, capacity - wt[size - 1]), // if we include the element
+                   knapsack(wt, val, size - 1, capacity));                               // if we DON'T include the element
+                                                                                         // and take the maximum
 
     else
-        return knapsack(wt, val, size - 1, capacity);
+        return knapsack(wt, val, size - 1, capacity); // if this element is already larger than the capacity
 }
 
 int main()

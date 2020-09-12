@@ -2,6 +2,7 @@
 using namespace std;
 long long int solve(int it, int n, int y, long long int dp[][11])
 {
+    // first we'll handle all the extreme cases of first and the alst digit. (n+1 and 1 acc. to 1-based indexing)
     if (it == (n + 1))
     {
         long long int r = 1;
@@ -89,8 +90,8 @@ int main()
     {
         int n;
         cin >> n;
-        int it = 1;
-        int y = 9;
+        int it = 1; // can be zero also in case of 0-based indexing
+        int y = 9;  // digit placed at the previous position
 
         long long int dp[n + 1][11];
         memset(dp, -1, sizeof(dp));

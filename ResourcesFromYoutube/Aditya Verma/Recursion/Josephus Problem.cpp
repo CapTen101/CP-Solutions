@@ -11,7 +11,10 @@ int kill(int index, int k, vector<int> &circle)
     if (circle.size() == 1)
         return circle[0];
 
+    // calculate the next Kth person
     index = (index + k) % circle.size();
+
+    // Kill that Kth person
     circle.erase(circle.begin() + index);
 
     return kill(index, k, circle);

@@ -1,12 +1,5 @@
-// { Driver Code Starts
-//Initial Template for C++
-
 #include <bits/stdc++.h>
 using namespace std;
-
-// } Driver Code Ends
-
-//User function Template for C++
 
 vector<int> help_classmate(vector<int> a, int n)
 {
@@ -16,6 +9,7 @@ vector<int> help_classmate(vector<int> a, int n)
 
     for (int i = 0; i < a.size(); i++)
     {
+        // push the index into stack instead of the array elements (BRILLIANT!)
         while (s.empty() == false && a[s.top()] > a[i])
         {
             res[s.top()] = a[i];
@@ -26,8 +20,6 @@ vector<int> help_classmate(vector<int> a, int n)
 
     return res;
 }
-
-// { Driver Code Starts.
 
 int main()
 {
@@ -50,4 +42,4 @@ int main()
         cout << "\n";
     }
     return 0;
-} // } Driver Code Ends
+}

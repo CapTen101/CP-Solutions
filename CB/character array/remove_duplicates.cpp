@@ -13,7 +13,30 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+void removeDuplicate(char str[])
+{
+
+    int p = 0;
+    int len = strlen(str);
+
+    FOR(c, 0, len)
+    {
+        if (str[c] != str[p])
+        {
+            p++;
+            str[p] = str[c];
+        }
+    }
+
+    // to terminate the string
+    str[p + 1] = '\0';
+    return;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
+    char str[] = "ccooooddinnggg";
+    removeDuplicate(str);
+    cout << str;
 }

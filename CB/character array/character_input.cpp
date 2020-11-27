@@ -13,16 +13,18 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+// NOTE
+
 // cin.get() gets a single character
 // put a loop to read all characters until we get a '\n'
 // like depicted in the below function:
 
-void readline(char a[], int maxLen)
+void readline(char a[], int maxLen, char DELIM = '\n')
 {
     int i = 0;
     char ch = cin.get();
 
-    while (ch != '\n')
+    while (ch != DELIM)
     {
         a[i] = ch;
         i++;
@@ -44,6 +46,13 @@ int main()
     char a[1000];
 
     readline(a, 1000);
+
+    // THIS SAME PURPOSE IS FULFILLED BY A FUNCTION CALLED GETLINE!
+
+    char b[1000];
+    cin.getline(b, 1000, '$');
+
+    // BOTH DO THE SAME THING EXACTLY!
 
     cout << a << endl;
 }

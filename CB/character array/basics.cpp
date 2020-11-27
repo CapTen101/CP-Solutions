@@ -20,5 +20,10 @@ int main()
     char ch[10] = {'d', 'f', 't', 'e', 0};
     cout << ch << endl;
 
-    cout << my_sizeof(ch);
+    cout << my_sizeof(ch) << endl;
+
+    //input
+    char s2[] = "hello";
+
+    cout << s2 << endl;
 }

@@ -23,6 +23,10 @@ int main()
     cin >> n;
 
     char a[1000];
+    char largest[1000];
+
+    int len = 0;
+    int largest_len = 0;
 
     // THIS CIN.GET() IS DONE IS ORDER TO READ AND VOID THE PROGRAM TO READ NULL CHARACTER AS A NULL STRING INPUT!
     cin.get();
@@ -30,6 +34,17 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cin.getline(a, 1000);
-        cout << a << endl;
+        len = strlen(a);
+
+        if (largest_len < len)
+        {
+            largest_len = max(largest_len, len);
+
+            //COPYING All THE CHARACTERS IN THE LARGET[] CHARACTER ARRAY THROUGH strcpy()
+            // This will copy the characters from a[] to the largest string largest[]
+            strcpy(largest, a);
+        }
     }
+
+    cout << largest << "and" << largest_len << endl;
 }

@@ -47,7 +47,7 @@ int main()
 
     readline(a, 1000);
 
-    // THIS SAME PURPOSE IS FULFILLED BY A FUNCTION CALLED GETLINE!
+    // ABOVE SAME PURPOSE IS FULFILLED BY A FUNCTION CALLED GETLINE!
 
     char b[1000];
     cin.getline(b, 1000, '$');

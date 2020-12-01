@@ -56,7 +56,7 @@ int main()
     // Operator Overloading
     if (s1 > s0)
     {
-        cout << "Mango string is bigger than Apple string" << endl;
+        cout << "Mango string is bigger than Apple string Alphabetically" << endl;
     }
 
     // find substrings
@@ -77,6 +77,4 @@ int main()
     {
         cout << (*it) << endl;
     }
-
-    
 }

@@ -16,4 +16,31 @@ const ll mod = 1000000007;
 int main()
 {
     ios_base::sync_with_stdio(false);
+
+    int n, m;
+    cin >> n >> m;
+    int a[n][m];
+    int val = 1;
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            a[i][j] = val;
+            val++;
+        }
+        cout << endl;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            a[i][j] = val;
+            val++;
+        }
+        cout << endl;
+    }
+
+    // COMPLETE
 }

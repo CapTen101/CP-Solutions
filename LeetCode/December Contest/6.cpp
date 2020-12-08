@@ -38,10 +38,42 @@ public:
         if (root == NULL)
             return NULL;
 
-        if (root->left != NULL)
-            root->left->next = root->right;
-        connect(root->right);
-        connect(root->left);
+        int level = 0;
+        vector<pair<int, Node *>> list;
+        queue<Node *> q;
+        q.push(root);
+
+        while (q.empty() == false)
+        {
+            Node *temp = q.front();
+            list.push_back({level, temp});
+            q.pop();
+
+            if (temp->left != NULL)
+                q.push(temp->left);
+
+            if (temp->right != NULL)
+                q.push(temp->right);
+
+            level++;
+        }
+
+        level = 0;
+
+        for (int i = 1; i < list.size(); i++)
+        {
+            if (i == list.size() - 1)
+                break;
+
+            if (i == 0)
+                continue;
+
+            if (list[i].first == level && list[i + 1].first == level)
+            {
+                list[i].second->next = list[i + 1].second;
+                continue;
+            }
+        }
 
         return root;
     }

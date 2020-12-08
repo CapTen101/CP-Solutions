@@ -62,6 +62,8 @@ int main()
     int a[1000][1000] = {0};
     int val = 1;
 
+    // int b[3][3] = {{1, 2, 3}, {8, 9, 4}, {7, 6, 5}};
+
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)

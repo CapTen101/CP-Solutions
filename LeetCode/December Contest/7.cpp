@@ -13,6 +13,8 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+// Constant space solution: https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/discuss/963539/C%2B%2BConstant-Space-Simple-and-easy-to-understand-solution
+
 vector<vector<int>> spiral_traverse(int n)
 {
     vector<vector<int>> v;

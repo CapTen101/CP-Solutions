@@ -1,18 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define my_sizeof(type) ((char *)(&type + 1) - (char *)(&type))
-#define FOR(i, start, end) for (int i = start; i < end; i++)
-#define ll long long int
-#define ull unsigned long long int
-#define l long int
-#define ul unsigned long int
-#define start \
-    int t;    \
-    cin >> t; \
-    while (t--)
-const ll mod = 1000000007;
-
 // Definition for a Node.
 class Node
 {
@@ -38,29 +26,33 @@ public:
         if (root == NULL)
             return NULL;
 
-        int level = 0;
         vector<pair<int, Node *>> list;
-        queue<Node *> q;
-        q.push(root);
+        queue<pair<int, Node *>> q;
+        q.push({0, root});
+        list.push_back({0, root});
 
         while (q.empty() == false)
         {
-            Node *temp = q.front();
-            list.push_back({level, temp});
+            pair<int, Node *> p = q.front();
+            Node *node = p.second;
+            int currentLevel = p.first;
             q.pop();
+            currentLevel++;
 
-            if (temp->left != NULL)
-                q.push(temp->left);
+            if (node->left != NULL)
+            {
+                q.push({currentLevel, node->left});
+                list.push_back({currentLevel, node->left});
+            }
 
-            if (temp->right != NULL)
-                q.push(temp->right);
-
-            level++;
+            if (node->right != NULL)
+            {
+                q.push({currentLevel, node->right});
+                list.push_back({currentLevel, node->right});
+            }
         }
 
-        level = 0;
-
-        for (int i = 1; i < list.size(); i++)
+        for (int i = 0; i < list.size(); i++)
         {
             if (i == list.size() - 1)
                 break;
@@ -68,11 +60,10 @@ public:
             if (i == 0)
                 continue;
 
-            if (list[i].first == level && list[i + 1].first == level)
-            {
+            if (list[i].first == list[i + 1].first)
                 list[i].second->next = list[i + 1].second;
-                continue;
-            }
+            else
+                list[i].second->next = NULL;
         }
 
         return root;

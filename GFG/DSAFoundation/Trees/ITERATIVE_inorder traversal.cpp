@@ -25,7 +25,7 @@ void inorder(Node *root)
             s.push(current);
             current = current->left; // go all the way to left bottom.
         }
-        current = s.top();        // take the top most element of stack(bottom omst element of the tree)
+        current = s.top();        // take the top most element of stack(bottom most element of the tree)
         cout << current->data;    // print it
         s.pop();                  // remove it
         current = current->right; // shift current to right and repeat the same process

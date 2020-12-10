@@ -29,10 +29,10 @@ class Solution
 public:
     vector<int> list;
 
-    void *inorder(TreeNode *root)
+    void inorder(TreeNode *root)
     {
         if (root == NULL)
-            return root;
+            return;
 
         inorder(root->left);
         list.push_back(root->val);
@@ -41,35 +41,20 @@ public:
 
     TreeNode *increasingBST(TreeNode *root)
     {
-        // TreeNode *current_node = root;
-        // TreeNode *newTreeRoot = new TreeNode();
-        // TreeNode *current_new_node = new TreeNode();
-        // current_new_node = newTreeRoot;
-        // stack<TreeNode *> s;
-
-        // while (current_node != NULL || s.empty() == false)
-        // {
-        //     s.push(current_node);
-        //     current_node = current_node->left; // go all the way to left bottom.
-        // }
-
-        // current_node = s.top();
-        // newTreeRoot->val = current_node->val;
-        // s.pop();
-
-        TreeNode *current = root;
         inorder(root);
+        int index = 0;
+        TreeNode *newRoot = new TreeNode(list[0]);
+        TreeNode *current = newRoot;
 
-        reverse(list.begin(), list.end());
-        int index = list.size() - 1;
-
-        while (list.empty() == false && index >= 0)
+        while (index < list.size())
         {
-            TreeNode *node = new TreeNode(list[index]);
-            node->right = new TreeNode(--index);
-            list.pop_back();
-            index--;
+            current->right = new TreeNode(list[++index]);
+            if (index >= list.size())
+                break;
+            current = current->right;
         }
+
+        return newRoot;
     }
 };
 

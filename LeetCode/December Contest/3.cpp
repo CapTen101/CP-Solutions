@@ -27,8 +27,10 @@ struct TreeNode
 class Solution
 {
 public:
+    // This list will keep all the values in increasing order from the BST
     vector<int> list;
 
+    // This function will traverse the tree in In-Order fashion
     void inorder(TreeNode *root)
     {
         if (root == NULL)
@@ -41,21 +43,32 @@ public:
 
     TreeNode *increasingBST(TreeNode *root)
     {
+        // Pupolate the 'list' vector with values from BST
         inorder(root);
+
+        // Iterator index to traverse the vector
         int index = 0;
+
+        // Initialise the first node 'newRoot' of the new tree
         TreeNode *newRoot = new TreeNode(list[index]);
         TreeNode *current = newRoot;
 
         while (index < list.size())
         {
             index++;
+
+            // Exit the loop if the end of the vector is reached
             if (index >= list.size())
                 break;
 
+            // Make a new right node and initialize it
             current->right = new TreeNode(list[index]);
+
+            // Move on to that right node
             current = current->right;
         }
 
+        // return the new root
         return newRoot;
     }
 };

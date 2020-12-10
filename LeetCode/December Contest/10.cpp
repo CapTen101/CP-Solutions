@@ -18,11 +18,14 @@ class Solution
 public:
     bool validMountainArray(vector<int> &v)
     {
+        // index of the max element of the array
         int index = -1;
 
+        // size less then 3 is invalid for mountain array
         if (v.size() < 3)
             return false;
 
+        // checking for increasing monotocity
         for (int i = 1; i < v.size(); i++)
         {
             if (v[i] > v[i - 1])
@@ -34,9 +37,13 @@ public:
             }
         }
 
+        // checking if the max element is the  first or last index or not.
+        // If YES, then that's invalid.
+        // If NO, then proceed.
         if (index == -1 || index == 0)
             return false;
 
+        // checking for decreasing monotocity
         for (int i = index + 1; i < v.size(); i++)
         {
             if (v[i] < v[i - 1])

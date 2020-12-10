@@ -43,14 +43,16 @@ public:
     {
         inorder(root);
         int index = 0;
-        TreeNode *newRoot = new TreeNode(list[0]);
+        TreeNode *newRoot = new TreeNode(list[index]);
         TreeNode *current = newRoot;
 
         while (index < list.size())
         {
-            current->right = new TreeNode(list[++index]);
+            index++;
             if (index >= list.size())
                 break;
+
+            current->right = new TreeNode(list[index]);
             current = current->right;
         }
 

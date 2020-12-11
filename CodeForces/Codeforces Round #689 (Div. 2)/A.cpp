@@ -22,40 +22,12 @@ int main()
         int n, k;
         cin >> n >> k;
 
-        string ans;
+        string ans = "abc";
 
-        for (int i = 1; i <= k; i++)
-            ans += "a";
-
-        if (n - k == 1)
+        FOR(i, 0, n)
         {
-            ans += "c";
-            cout << ans << endl;
-            continue;
+            cout << ans[i % 3];
         }
-        else if (n - k == 2)
-        {
-            ans += "cb";
-            cout << ans << endl;
-            continue;
-        }
-        else if (n - k == 3)
-        {
-            ans += "cba";
-            cout << ans << endl;
-            continue;
-        }
-
-        for (int i = k + 1; i <= n; i++)
-        {
-            if (ans[i - 1] == 'a')
-                ans += "b";
-            else if (ans[i - 1] == 'b')
-                ans += "c";
-            else if (ans[i - 1] == 'c')
-                ans += "a";
-        }
-
-        cout << ans << endl;
+        cout << endl;
     }
 }

@@ -13,6 +13,12 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+// Approach 1 (Brute Force)
+
+// Approach 2 (Some optimization)
+
+// Approach 3 (Total Optimization)
+
 int main()
 {
     ios_base::sync_with_stdio(false);

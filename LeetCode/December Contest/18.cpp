@@ -24,7 +24,7 @@ public:
         {
             if (i <= first)
                 first = i;
-            else if (i >= second)
+            else if (i <= second)
                 second = i;
             else
                 return true;

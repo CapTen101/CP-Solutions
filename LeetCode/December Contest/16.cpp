@@ -23,6 +23,7 @@ struct TreeNode
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// Use iterative In-Order DFS Traversal
 class Solution
 {
 public:
@@ -31,32 +32,26 @@ public:
         if (root == NULL)
             return true;
 
-        if (root->right != NULL && root->left != NULL)
+        stack<TreeNode *> s;
+        TreeNode *prev = NULL;
+
+        while (s.empty() == false || root != NULL)
         {
-            if (root->right->val > root->val && root->left->val < root->val)
-                return isValidBST(root->right) && isValidBST(root->left);
-            else
+            while (root != NULL)
+            {
+                s.push(root);
+                root = root->left;
+            }
+
+            root = s.top();
+            if (prev != NULL && prev->val >= root->val)
                 return false;
+            prev = root;
+            root = root->right;
+            s.pop();
         }
-        else
-        {
-            if (root->right == NULL && root->left != NULL)
-            {
-                if (root->left->val < root->val)
-                    return isValidBST(root->left);
-                else
-                    return false;
-            }
-            else if (root->left == NULL && root->right != NULL)
-            {
-                if (root->right->val > root->val)
-                    return isValidBST(root->right);
-                else
-                    return false;
-            }
-            else
-                return true;
-        }
+
+        return true;
     }
 };
 

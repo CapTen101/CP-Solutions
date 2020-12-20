@@ -13,7 +13,12 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
+// Intuition: All submatrices can be seen as rectangles defined by a Top-Left coordinate and a Bottom-Right Coordinate.
+
 // Approach 1 (Brute Force)
+void bruteforce(vector<vector<int>> matrix)
+{
+}
 
 // Approach 2 (Some optimization)
 

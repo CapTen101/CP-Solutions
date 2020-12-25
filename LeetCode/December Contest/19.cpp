@@ -15,50 +15,61 @@ using namespace std;
 class Solution
 {
 public:
-    string decodeAtIndex(string S, int K)
+    string decodeAtIndex(string s, int K)
     {
-        long long size = 0;
-        //length of decoded string
-        for (int i = 0; i < S.size(); i++)
-        {
-            if (isalpha(S[i]))
-            {
-                size++;
-            }
-            else if (isdigit(S[i]))
-            {
-                size *= S[i] - '0';
-            }
-        }
+        // REFERENCE SOLUTION
 
-        for (int i = S.size() - 1; i >= 0; i--)
-        {
-            K %= size;
+        // long long size = 0;
+        // //length of decoded string
+        // for (int i = 0; i < S.size(); i++)
+        // {
+        //     if (isalpha(S[i]))
+        //     {
+        //         size++;
+        //     }
+        //     else if (isdigit(S[i]))
+        //     {
+        //         size *= S[i] - '0';
+        //     }
+        // }
 
-            if (K == 0 && isalpha(S[i]))
-            {
-                string ans = "";
-                ans.push_back(S[i]);
-                return ans;
-            }
+        // for (int i = S.size() - 1; i >= 0; i--)
+        // {
+        //     K %= size;
 
-            //means string before it has been repeated digit-1 times
-            else if (isdigit(S[i]))
-            {
-                size /= S[i] - '0';
-            }
+        //     if (K == 0 && isalpha(S[i]))
+        //     {
+        //         string ans = "";
+        //         ans.push_back(S[i]);
+        //         return ans;
+        //     }
 
-            //simply decrease length
-            else
-            {
-                size--;
-            }
-        }
-        return "";
+        //     //means string before it has been repeated digit-1 times
+        //     else if (isdigit(S[i]))
+        //     {
+        //         size /= S[i] - '0';
+        //     }
+
+        //     //simply decrease length
+        //     else
+        //     {
+        //         size--;
+        //     }
+        // }
+        // return "";
+
+        string ans;
     }
 };
 
 int main()
 {
     ios_base::sync_with_stdio(false);
+
+    string ans = "Hello";
+    string temp = ans;
+    for (int i = 0; i < 6; i++)
+        ans += temp;
+
+    cout << ans;
 }

@@ -44,48 +44,19 @@ int main()
         {
             if (s[i] != p[i])
             {
-                if (s[i] == '1')
-                {
-                    count.push_back({1, i});
-                    one++;
-                }
-                else
-                {
-                    zero++;
-                    count.push_back({0, i});
-                }
 
-                // if (s[i] == '1' && p[i] == '0')
-                //     ans++;
-                // else
-                //     ans--;
+                if (s[i] == '1' && p[i] == '0')
+                    ans++;
+                else
+                    ans--;
             }
         }
-        // if (ans < 0 || ans > 0)
-        // {
-        //     cout << "No" << endl;
-        //     continue;
-        // }
-        // else
-        //     cout << "Yes" << endl;
-
-        if (one == zero)
+        if (ans < 0 || ans > 0)
         {
-            for (int i = 0; i < count.size(); i++)
-            {
-                auto p = count[i];
-                if (p.first == 1)
-                    one_sum += p.second;
-                else
-                    zero_sum += p.second;
-            }
-
-            if (zero_sum > one_sum)
-                cout << "Yes" << endl;
-            else
-                cout << "No" << endl;
+            cout << "No" << endl;
+            continue;
         }
         else
-            cout << "No" << endl;
+            cout << "Yes" << endl;
     }
 }

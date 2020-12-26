@@ -24,4 +24,8 @@ int main()
     cout << v[0] << endl;
     v.erase(v.begin() + 0);
     cout << v[0] << endl;
+
+    string s;
+    s.push_back('1');
+    s.push_back('2');
 }

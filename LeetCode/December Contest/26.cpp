@@ -15,45 +15,56 @@ using namespace std;
 class Solution
 {
 public:
-    int decode(string s, int ans)
+    void decode(string s, int &ans)
     {
         if (s.empty())
-            return ans;
+        {
+            ans += 1;
+            return;
+        }
 
         if (s.size() > 1)
         {
             if (s[0] == '0')
             {
-                return decode(s.substr(1), ans);
+                return;
             }
             else
             {
-                string temp;
-                temp.push_back(s[0]);
-                temp.push_back(s[1]);
+                string temp = "ab";
+                temp[0] = s[0];
+                temp[1] = s[1];
                 int num = stoi(temp);
-                cout << temp << endl;
+
+                cout << "num: " << num << endl;
 
                 if (num <= 26 && num >= 1)
                 {
-                    return decode(s.substr(1), ++ans) + decode(s.substr(2), ++ans);
+                    cout << "num 26 and 1 vala" << endl;
+                    decode(s.substr(1), ans);
+                    decode(s.substr(2), ans);
                 }
                 else
-                    return decode(s.substr(1), ++ans);
+                    decode(s.substr(1), ans);
             }
         }
         else // if size = 1
         {
             if (s[0] == '0')
-                return decode(s.substr(1), ans);
+                return;
             else
-                return decode(s.substr(1), ++ans);
+            {
+                ans += 1;
+                return;
+            }
         }
     }
 
     int numDecodings(string s)
     {
-        return decode(s, 0);
+        int ans = 0;
+        decode(s, ans);
+        return ans;
     }
 };
 
@@ -62,5 +73,5 @@ int main()
     ios_base::sync_with_stdio(false);
 
     Solution sol;
-    cout << sol.numDecodings("226");
+    cout << sol.numDecodings("12");
 }

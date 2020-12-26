@@ -62,9 +62,38 @@ public:
 
     int numDecodings(string s)
     {
-        int ans = 0;
-        decode(s, ans);
-        return ans;
+        // recursion code - without memoization
+        // int ans = 0;
+        // decode(s, ans);
+        // return ans;
+
+        // DP code - with memoization:
+
+        if (s[0] == '0')
+            return 0;
+
+        int n = s.size();
+        vector<int> dp(n + 1, 0);
+
+        // if the single given character is '0'
+        dp[0] = 1;
+
+        // if there is single character other than '0'
+        dp[1] = 1;
+
+        for (int i = 2; i <= n; i++)
+        {
+            // dp[i] corresponds to string s[i-1] (i.e. length i)
+            if (s[i - 1] - '0' > 0)
+                dp[i] = dp[i - 1];
+
+            if (s[i - 2] == '1' || s[i - 2] == '2' && s[i - 1] - '0' < 7)
+            {
+                dp[i] += dp[i - 2];
+            }
+        }
+
+        return dp[n];
     }
 };
 

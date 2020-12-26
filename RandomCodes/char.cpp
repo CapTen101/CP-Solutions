@@ -20,11 +20,8 @@ int main()
     //     string s;
     // cout << arr[0] << " " << 23;
 
-    string s = "123";
-    if (s.empty())
-        cout << s.substr(3);
-    else
-    {
-        cout << "string is empty";
-    }
+    vector<int> v = {1, 2, 3};
+    cout << v[0] << endl;
+    v.erase(v.begin() + 0);
+    cout << v[0] << endl;
 }

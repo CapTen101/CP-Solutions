@@ -18,5 +18,13 @@ int main()
     //     cout << ++m[1];
 
     //     string s;
-    cout << arr[0] << " " << 23;
+    // cout << arr[0] << " " << 23;
+
+    string s = "123";
+    if (s.empty())
+        cout << s.substr(3);
+    else
+    {
+        cout << "string is empty";
+    }
 }

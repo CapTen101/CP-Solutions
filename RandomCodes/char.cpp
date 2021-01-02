@@ -20,12 +20,21 @@ int main()
     //     string s;
     // cout << arr[0] << " " << 23;
 
-    vector<int> v = {1, 2, 3};
-    cout << v[0] << endl;
-    v.erase(v.begin() + 0);
-    cout << v[0] << endl;
+    // vector<int> v = {1, 2, 3};
+    // cout << v[0] << endl;
+    // v.erase(v.begin() + 0);
+    // cout << v[0] << endl;
 
-    string s;
-    s.push_back('1');
-    s.push_back('2');
+    // string s;
+    // s.push_back('1');
+    // s.push_back('2');
+
+    unordered_map<int, int> mp;
+
+    mp.insert(make_pair(83, 1));
+
+    if (mp[83])
+        cout << "Present" << endl;
+    else
+        cout << "not Present" << endl;
 }

@@ -18,27 +18,36 @@ public:
     int countStudents(vector<int> &students, vector<int> &sandwiches)
     {
         int n = students.size();
-        int not_int = 0;  // students interested
-        int interest = 0; // students not-interested
+        int not_int = 0; // students not-interested
 
-        while (interest + not_int <= n)
+        int st_one = 0, st_zero = 0;
+
+        for (auto i : students)
         {
-            if (students[0] == sandwiches[0]) // if he likes it
-            {
-                students.erase(students.begin() + 0);
-                sandwiches.erase(sandwiches.begin() + 0);
-                interest++;
-                if (not_int > 0)
-                    not_int--;
-            }
+            if (i)
+                st_one++;
             else
-            {
-                not_int++;
-                int stu = students[0];
-                students.erase(students.begin() + 0);
-                students.push_back(stu);
-            }
+                st_zero++;
         }
+
+        for (auto i : sandwiches)
+        {
+            if (i && st_one)
+                st_one--;
+
+            else if (!i && st_zero)
+                st_zero--;
+
+            else
+                break;
+        }
+
+        if (st_one)
+            return st_one;
+        else if (st_zero)
+            return st_zero;
+        else
+            return 0;
 
         return not_int;
     }

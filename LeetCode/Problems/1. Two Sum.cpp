@@ -15,7 +15,7 @@ using namespace std;
 class Solution
 {
 public:
-    // Faster than 38% submissions:
+    // Faster than 38% submissions: (20ms Solution)
     vector<int> twoSum(vector<int> &v, int k)
     {
         unordered_map<int, int> mp;
@@ -30,11 +30,26 @@ public:
             {
                 ans[0] = i;
                 ans[1] = mp[k - v[i]];
-                return ans;
+                return {i, mp[k - v[i]]};
             }
         }
 
         return ans;
+
+        // Faster than 99% solutions: (4ms Solution)
+
+        //
+        //
+
+        // map<int,int>mp;
+        // for(int i=0;i<nums.size();i++)
+        // {
+        //     if(mp.count(target-nums[i])>0)
+        //       return {mp[target-nums[i]],i};
+
+        //     mp[nums[i]]=i;
+        // }
+        // return{-1,-1};
     }
 };
 

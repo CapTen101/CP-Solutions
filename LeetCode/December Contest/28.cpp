@@ -15,23 +15,29 @@ using namespace std;
 class Solution
 {
 public:
-    int reachNumber(int x)
+    int reachNumber(int target)
     {
-        x = abs(x);
-        int n = ceil(sqrt(2 * x) - 1); // starting point for our pointer;
+        target = abs(target);
+        int i = 1;
 
-        while (true)
+        long long sum = 0;
+
+        while (sum < target)
         {
-            int upper = n * (n + 1) / 2;
-
-            if (upper >= x && (upper - x) % 2 == 0)
-                break;
-
-            else
-                n += 1;
+            sum += i * (i + 1) / 2;
+            i++;
         }
 
-        return n;
+        int res = sum - target;
+
+        if (sum == target)
+            return i;
+        else if (res % 2 == 0)
+            return i;
+        else
+        {
+            return i + ((i & 1) ? 1 : 2);
+        }
     }
 };
 

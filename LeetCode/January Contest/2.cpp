@@ -66,6 +66,7 @@ public:
 
         // return ans;
 
+        // Below is 600ms approach:
         if (original == target || original == NULL)
             return cloned;
 
@@ -76,6 +77,12 @@ public:
 
         else
             return getTargetCopy(original->right, cloned->right, target);
+        //
+        //
+        //
+
+        // Another Brilliant Solution:
+        return original == nullptr ? nullptr : original == target ? cloned : getTargetCopy(original->left, cloned->left, target) ?: getTargetCopy(original->right, cloned->right, target);
     }
 };
 

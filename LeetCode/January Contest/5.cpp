@@ -12,6 +12,64 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+// Definition for singly-linked list.
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
+class Solution
+{
+public:
+    ListNode *deleteDuplicates(ListNode *head)
+    {
+
+        if (head == NULL || head->next == NULL)
+            return head;
+
+        ListNode *curr = head;
+
+        // TO handle the duplicate nodes present at the start of the linked list
+        if (curr->val == curr->next->val)
+        {
+            while (curr != NULL && curr->next != NULL)
+            {
+                if (curr->val == curr->next->val)
+                {
+                    head = head->next;
+                    curr = curr->next;
+                }
+                else
+                    break;
+            }
+            head = head->next;
+            curr = curr->next;
+        }
+
+        while (curr != NULL && curr->next != NULL && curr->next->next != NULL)
+        {
+            if (curr->next->val == curr->next->next->val)
+            {
+                curr->next = curr->next->next->next;
+                continue;
+            }
+            else
+            {
+                curr = curr->next;
+                continue;
+            }
+
+            curr = curr->next;
+        }
+
+        return head;
+    }
+};
+
 int main()
 {
     ios_base::sync_with_stdio(false);

@@ -31,42 +31,75 @@ public:
         if (head == NULL || head->next == NULL)
             return head;
 
-        ListNode *curr = head;
+        ListNode *sentinel = new ListNode(0, head);
+        ListNode *pred = sentinel;
 
-        // TO handle the duplicate nodes present at the start of the linked list
-        if (curr->val == curr->next->val)
+        while (head != NULL)
         {
-            while (curr != NULL && curr->next != NULL)
+            if (head->next != NULL && head->val == head->next->val)
             {
-                if (curr->val == curr->next->val)
-                {
+                while (head->next != NULL && head->next->val == head->val)
                     head = head->next;
-                    curr = curr->next;
-                }
-                else
-                    break;
-            }
-            head = head->next;
-            curr = curr->next;
-        }
 
-        while (curr != NULL && curr->next != NULL && curr->next->next != NULL)
-        {
-            if (curr->next->val == curr->next->next->val)
-            {
-                curr->next = curr->next->next->next;
-                continue;
+                pred->next = head->next;
             }
             else
             {
-                curr = curr->next;
-                continue;
+                pred = pred->next;
             }
 
-            curr = curr->next;
+            head = head->next;
         }
 
-        return head;
+        return sentinel->next;
+
+        // // TO handle the duplicate nodes present at the start of the linked list
+        // if (curr->val == curr->next->val)
+        // {
+        //     while (curr != NULL && curr->next != NULL)
+        //     {
+        //         if (curr->val == curr->next->val)
+        //         {
+        //             head = head->next;
+        //             curr = curr->next;
+        //         }
+        //         else
+        //             break;
+        //     }
+        //     head = head->next;
+        //     curr = curr->next;
+        // }
+
+        // while (curr != NULL && curr->next != NULL)
+        // {
+        //     if (curr->next->next != NULL && curr->next->next->next != NULL)
+        //     {
+        //         if (curr->next->val == curr->next->next->val)
+        //         {
+        //             curr->next = curr->next->next->next;
+        //             continue;
+        //         }
+        //         else
+        //         {
+        //             curr = curr->next;
+        //             continue;
+        //         }
+
+        //         curr = curr->next;
+        //     }
+        //     else
+        //     {
+        //         if (curr->next->val == curr->next->next->val)
+        //         {
+        //             curr->next = nullptr;
+        //             break;
+        //         }
+        //         else
+        //             curr = curr->next;
+        //     }
+        // }
+
+        // return head;
     }
 };
 

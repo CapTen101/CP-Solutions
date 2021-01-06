@@ -52,54 +52,6 @@ public:
         }
 
         return sentinel->next;
-
-        // // TO handle the duplicate nodes present at the start of the linked list
-        // if (curr->val == curr->next->val)
-        // {
-        //     while (curr != NULL && curr->next != NULL)
-        //     {
-        //         if (curr->val == curr->next->val)
-        //         {
-        //             head = head->next;
-        //             curr = curr->next;
-        //         }
-        //         else
-        //             break;
-        //     }
-        //     head = head->next;
-        //     curr = curr->next;
-        // }
-
-        // while (curr != NULL && curr->next != NULL)
-        // {
-        //     if (curr->next->next != NULL && curr->next->next->next != NULL)
-        //     {
-        //         if (curr->next->val == curr->next->next->val)
-        //         {
-        //             curr->next = curr->next->next->next;
-        //             continue;
-        //         }
-        //         else
-        //         {
-        //             curr = curr->next;
-        //             continue;
-        //         }
-
-        //         curr = curr->next;
-        //     }
-        //     else
-        //     {
-        //         if (curr->next->val == curr->next->next->val)
-        //         {
-        //             curr->next = nullptr;
-        //             break;
-        //         }
-        //         else
-        //             curr = curr->next;
-        //     }
-        // }
-
-        // return head;
     }
 };
 

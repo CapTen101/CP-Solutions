@@ -12,52 +12,6 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-// int minimumDeletions(string s)
-// {
-//     int right_0 = count(s.begin(), s.end(), '0');
-
-//     int left_1 = 0;
-
-//     int n = s.size();
-
-//     int res = INT_MAX;
-
-//     for (int i = 0; i < n; i++)
-//     {
-//         if (s[i] == '0')
-//         {
-//             right_0 -= 1;
-//         }
-//         else
-//         {
-//             left_1 += 1;
-//         }
-
-//         res = min(res, right_0 + left_1);
-//     }
-
-//     return res;
-// }
-
-bool check(string s)
-{
-    bool fail = 0, success = 0;
-
-    if (s[0] == '1')
-        fail = 1;
-
-    FOR(i, 1, s.length() - 1)
-    {
-        if (fail)
-        {
-            if (s[i] == '0' && s[i + 1] == '0')
-            {
-                return false;
-            }
-        }
-    }
-}
-
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -67,7 +21,7 @@ int main()
         string s;
         cin >> s;
 
-        bool success = 0, fail = 0;
+        bool success = 1, fail = 0;
 
         FOR(i, 1, s.length())
         {
@@ -78,7 +32,10 @@ int main()
             if (fail)
             {
                 if (s[i - 1] == '0' && s[i] == '0')
+                {
                     success = 0;
+                    break;
+                }
             }
         }
 

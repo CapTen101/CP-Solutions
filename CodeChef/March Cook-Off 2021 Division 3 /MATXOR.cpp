@@ -13,18 +13,18 @@ using namespace std;
 
 int find(int n)
 {
-    int mod = n % 4;
+    int val = n % 4;
 
-    if (mod == 0)
+    if (val == 0)
         return n;
 
-    else if (mod == 1)
+    else if (val == 1)
         return 1;
 
-    else if (mod == 2)
+    else if (val == 2)
         return n + 1;
 
-    else if (mod == 3)
+    else if (val == 3)
         return 0;
 }
 
@@ -44,15 +44,6 @@ int main()
         cin >> n >> m >> k;
 
         int ans = 0;
-
-        // for (int i = 1; i <= n; i++)
-        // {
-        //     for (int j = 1; j <= m; j++)
-        //     {
-        //         ll val = (k + i + j);
-        //         ans = (ans ^ val);
-        //     }
-        // }
 
         for (ll i = 1; i <= m; i++)
         {

@@ -39,7 +39,7 @@ int main()
 
         ll i = 4;
 
-        while (verdict != 1 && verdict == 0)
+        while (verdict != 1 && verdict == 0 && i <= 1000000)
         {
             bool chk = check(i);
             if (chk)
@@ -50,11 +50,13 @@ int main()
 
                 cout << i << endl;
                 cin >> verdict;
+
+                i++;
             }
             else
             {
-                continue;
                 i++;
+                continue;
             }
         }
 

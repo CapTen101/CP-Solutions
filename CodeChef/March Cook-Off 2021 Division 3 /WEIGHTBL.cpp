@@ -18,21 +18,16 @@ int main()
 
     start
     {
-        int n;
-        cin >> n;
+        ll w1, w2, x1, x2, m;
+        cin >> w1 >> w2 >> x1 >> x2 >> m;
 
-        vector<ll> c(n);
-        for (int i = 0; i < n; i++)
-            cin >> c[i];
-
-        // if (n == 2)
-        // {
-        //     cout << 2 * c[0] + 2 * c[1] << endl;
-        //     continue;
-        // }
-        // else
-        // {
-        //     cout << n * c[0] + n * c[1] << endl;
-        // }
+        if (m * x1 <= (w2 - w1) && m * x2 >= (w2 - w1))
+        {
+            cout << "1" << endl;
+        }
+        else
+        {
+            cout << "0" << endl;
+        }
     }
 }

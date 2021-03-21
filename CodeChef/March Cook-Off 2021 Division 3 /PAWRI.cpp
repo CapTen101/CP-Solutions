@@ -5,7 +5,6 @@ using namespace std;
 #define FOR(i, start, end) for (int i = start; i < end; i++)
 #define ll long long int
 #define ull unsigned long long int
-#define l long int
 #define ul unsigned long int
 #define start \
     int t;    \
@@ -18,21 +17,27 @@ int main()
 
     start
     {
-        int n;
-        cin >> n;
+        string s;
+        cin >> s;
 
-        vector<ll> c(n);
-        for (int i = 0; i < n; i++)
-            cin >> c[i];
+        ll l = 0;
 
-        // if (n == 2)
-        // {
-        //     cout << 2 * c[0] + 2 * c[1] << endl;
-        //     continue;
-        // }
-        // else
-        // {
-        //     cout << n * c[0] + n * c[1] << endl;
-        // }
+        while (l <= s.length() - 5)
+        {
+            if (s.substr(l, 5) == "party")
+            {
+                s[l + 2] = 'w';
+                s[l + 3] = 'r';
+                s[l + 4] = 'i';
+
+                l += 5;
+            }
+            else
+            {
+                l++;
+            }
+        }
+
+        cout << s << endl;
     }
 }

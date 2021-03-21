@@ -18,21 +18,7 @@ int main()
 
     start
     {
-        int n;
-        cin >> n;
-
-        vector<ll> c(n);
-        for (int i = 0; i < n; i++)
-            cin >> c[i];
-
-        // if (n == 2)
-        // {
-        //     cout << 2 * c[0] + 2 * c[1] << endl;
-        //     continue;
-        // }
-        // else
-        // {
-        //     cout << n * c[0] + n * c[1] << endl;
-        // }
+        ll a, b;
+        cin >> a >> b;
     }
 }

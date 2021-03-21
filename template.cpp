@@ -5,7 +5,6 @@ using namespace std;
 #define FOR(i, start, end) for (int i = start; i < end; i++)
 #define ll long long int
 #define ull unsigned long long int
-#define l long int
 #define ul unsigned long int
 #define start \
     int t;    \

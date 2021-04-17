@@ -6,14 +6,6 @@ using namespace std;
 #define ll long long int
 #define ull unsigned long long int
 #define ul unsigned long int
-#define get cin >>
-#define print cout <<
-#define inarr(s, n, arr)        \
-    for (int i = s; i < n; i++) \
-        cin >> arr[i];
-#define outarr(s, n, arr)       \
-    for (int i = s; i < n; i++) \
-        cout << arr[i];
 #define start \
     int t;    \
     cin >> t; \
@@ -23,4 +15,27 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+
+    ll n, x;
+    cin >> n >> x;
+    map<ll, ll> m;
+    vector<ll> v;
+    for (int i = 0; i < n; i++)
+    {
+        ll s, r;
+        cin >> s >> r;
+        v.push_back(r);
+        m.insert({r, s});
+    }
+
+    sort(v.begin(), v.end());
+
+    for (int i = v.size() - 1; i >= 0; i--)
+    {
+        if (m[v[i]] <= x)
+        {
+            cout << v[i] << endl;
+            break;
+        }
+    }
 }

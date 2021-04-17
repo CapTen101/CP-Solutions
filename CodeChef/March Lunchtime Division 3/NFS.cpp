@@ -6,14 +6,6 @@ using namespace std;
 #define ll long long int
 #define ull unsigned long long int
 #define ul unsigned long int
-#define get cin >>
-#define print cout <<
-#define inarr(s, n, arr)        \
-    for (int i = s; i < n; i++) \
-        cin >> arr[i];
-#define outarr(s, n, arr)       \
-    for (int i = s; i < n; i++) \
-        cout << arr[i];
 #define start \
     int t;    \
     cin >> t; \
@@ -23,4 +15,17 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+
+    start
+    {
+        ll u, v, a, s;
+        cin >> u >> v >> a >> s;
+
+        ll vel_turn = sqrt(pow(u, 2) - 2 * a * s);
+
+        if (vel_turn <= v)
+            cout << "Yes" << endl;
+        else
+            cout << "No" << endl;
+    }
 }

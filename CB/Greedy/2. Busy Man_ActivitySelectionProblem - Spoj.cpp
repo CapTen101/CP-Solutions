@@ -31,34 +31,31 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    start
+    int N;
+    cin >> N;
+    vector<pair<int, int>> act(N);
+
+    for (int i = 0; i < N; i++)
     {
-        int N;
-        cin >> N;
-        vector<pair<int, int>> act(N);
-
-        for (int i = 0; i < N; i++)
-        {
-            int m, n;
-            cin >> m >> n;
-            act[i] = make_pair(m, n);
-        }
-
-        sort(act.begin(), act.end(), compare);
-
-        int ans = 1;
-        int end = act[0].second;
-
-        for (int i = 1; i < N; i++)
-        {
-            if (end <= act[i].first)
-            {
-                ans++;
-                end = act[i].second;
-            }
-        }
-
-        cout << ans << endl;
-        act.clear();
+        int m, n;
+        cin >> m >> n;
+        act[i] = make_pair(m, n);
     }
+
+    sort(act.begin(), act.end(), compare);
+
+    int ans = 1;
+    int end = act[0].second;
+
+    for (int i = 1; i < N; i++)
+    {
+        if (end <= act[i].first)
+        {
+            ans++;
+            end = act[i].second;
+        }
+    }
+
+    cout << ans << endl;
+    act.clear();
 }

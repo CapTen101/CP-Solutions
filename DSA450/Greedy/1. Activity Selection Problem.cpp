@@ -19,35 +19,35 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+int maxMeetings(int s[], int end[], int n)
+{
+
+    vector<pair<int, int>> v;
+
+    for (int i = 0; i < n; i++)
+        v.push_back(make_pair(end[i], s[i]));
+
+    sort(v.begin(), v.end());
+
+    int res = 1;
+    int fin = v[0].first;
+
+    for (int i = 1; i < n; i++)
+    {
+        if (fin < v[i].second)
+        {
+            res++;
+            fin = v[i].first;
+        }
+    }
+
+    v.clear();
+
+    return res;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-
-    vector<int> white, black;
-
-    // 0 - white
-    // 1 - black
-
-    int n;
-    cin >> n;
-    vector<int> arr(n);
-    inarr(0, n, arr);
-
-    for (int i = 0; i < arr.size(); i++)
-    {
-        if (arr[i])
-            black.push_back(i);
-        else
-            white.push_back(i);
-    }
-
-    int length = 0;
-
-    for (int i = 0; i < white.size(); i++)
-    {
-        length += fabs(white[i] - black[i]);
-    }
-
-    cout << "length of wire = " << length << endl;
 }

@@ -23,31 +23,4 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-
-    vector<int> white, black;
-
-    // 0 - white
-    // 1 - black
-
-    int n;
-    cin >> n;
-    vector<int> arr(n);
-    inarr(0, n, arr);
-
-    for (int i = 0; i < arr.size(); i++)
-    {
-        if (arr[i])
-            black.push_back(i);
-        else
-            white.push_back(i);
-    }
-
-    int length = 0;
-
-    for (int i = 0; i < white.size(); i++)
-    {
-        length += fabs(white[i] - black[i]);
-    }
-
-    cout << "length of wire = " << length << endl;
 }

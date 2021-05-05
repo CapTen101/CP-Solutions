@@ -12,24 +12,45 @@ struct Job
 
 bool compare(Job j1, Job j2)
 {
-    return (j1.dead < j2.dead);
+    return (j1.profit > j2.profit);
 }
 
 class Solution
 {
 public:
-    vector<int> JobScheduling(Job arr[], int n)
+    vector<int> JobScheduling(Job jobs[], int n)
     {
-        // your code here
         vector<int> ans(2);
-        int jobs = 0;
-        int profit = 0;
+        int slots = 0;
+        int maxdead;
 
-        sort(arr, arr + n, compare);
+        for (int i = 0; i < n; i++)
+            slots = max(slots, jobs[i].dead);
+
+        vector<int> schedule(slots, -1);
+
+        sort(jobs, jobs + n, compare);
+
+        int countjobs = 0, profit = 0;
 
         for (int i = 0; i < n; i++)
         {
+            for (int j = jobs[i].dead - 1; j >= 0; j--)
+            {
+                if (schedule[j] == -1)
+                {
+                    countjobs++;
+                    schedule[j] = jobs[i].id;
+                    profit += jobs[i].profit;
+                    break;
+                }
+            }
         }
+
+        ans[0] = countjobs;
+        ans[1] = profit;
+
+        return ans;
     }
 };
 

@@ -1,8 +1,6 @@
-for (int i = 1; i < n; i++)
-
 // { Driver Code Starts
 #include <bits/stdc++.h>
-    using namespace std;
+using namespace std;
 
 // } Driver Code Ends
 class Solution

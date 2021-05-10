@@ -19,33 +19,6 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-long long binaryexpo(long long a, long b)
-{
-    if (b == 0)
-        return 1;
-
-    long long res = binaryexpo(a, b / 2);
-
-    if (b % 2)
-        return res * res * a;
-    else
-        return res * res;
-}
-
-long long binpow(long long a, long long b, long long m)
-{
-    a %= m;
-    long long res = 1;
-    while (b > 0)
-    {
-        if (b & 1)
-            res = res * a % m;
-        a = a * a % m;
-        b >>= 1;
-    }
-    return res;
-}
-
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -53,11 +26,23 @@ int main()
 
     start
     {
-        int n;
-        cin >> n;
+        ll n, x, k;
+        cin >> n >> x >> k;
 
-        int power = (int)binpow(2, n - 1, 1000000007);
+        bool enter = false;
 
-        cout << power << endl;
+        // bool first = ((x / k) + 1) == (int)(((x / k) + 1));
+        // bool second = ((n + 1 - x + k) / k) == (int)((n + 1 - x + k) / k);
+
+        if (!(x % k)) // if int
+        {
+            enter = true;
+        }
+        else if (!((n + 1 - x + k) % k)) // if int
+        {
+            enter = true;
+        }
+
+        cout << (enter ? "YES" : "NO") << endl;
     }
 }

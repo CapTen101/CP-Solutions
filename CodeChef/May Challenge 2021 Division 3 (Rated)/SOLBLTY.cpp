@@ -19,45 +19,16 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-long long binaryexpo(long long a, long b)
-{
-    if (b == 0)
-        return 1;
-
-    long long res = binaryexpo(a, b / 2);
-
-    if (b % 2)
-        return res * res * a;
-    else
-        return res * res;
-}
-
-long long binpow(long long a, long long b, long long m)
-{
-    a %= m;
-    long long res = 1;
-    while (b > 0)
-    {
-        if (b & 1)
-            res = res * a % m;
-        a = a * a % m;
-        b >>= 1;
-    }
-    return res;
-}
-
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-
     start
     {
-        int n;
-        cin >> n;
 
-        int power = (int)binpow(2, n - 1, 1000000007);
+        int x, a, b;
+        cin >> x >> a >> b;
 
-        cout << power << endl;
+        cout << (a + (100 - x) * b) * 10 << endl;
     }
 }

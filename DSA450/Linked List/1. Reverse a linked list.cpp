@@ -17,24 +17,33 @@ struct Node
     }
 };
 
+void reverseUtil(struct Node *head)
+{
+}
+
 class Solution
 {
 public:
     //Function to reverse a linked list.
     struct Node *reverseList(struct Node *head)
     {
-        // code here
-        // return head of reversed list
-        Node *curr = head, *prev = NULL, *next = NULL;
+        // ITERATIVE METHOD
+        // Node *curr = head, *prev = NULL, *next = NULL;
 
-        while (curr != NULL)
-        {
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-        }
-        return prev;
+        // while (curr != NULL)
+        // {
+        //     next = curr->next;
+        //     curr->next = prev;
+        //     prev = curr;
+        //     curr = next;
+        // }
+        // return prev;
+
+        // RECURSIVE METHOD
+        if (head == NULL)
+            return head;
+
+        head
     }
 };
 

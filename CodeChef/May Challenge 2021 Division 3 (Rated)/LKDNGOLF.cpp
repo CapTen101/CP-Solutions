@@ -31,9 +31,6 @@ int main()
 
         bool enter = false;
 
-        // bool first = ((x / k) + 1) == (int)(((x / k) + 1));
-        // bool second = ((n + 1 - x + k) / k) == (int)((n + 1 - x + k) / k);
-
         if (!(x % k)) // if int
         {
             enter = true;

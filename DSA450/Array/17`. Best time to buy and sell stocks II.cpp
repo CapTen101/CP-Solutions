@@ -1,3 +1,5 @@
+// infinite transactions:
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -19,29 +21,34 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+// infinite transactions
+int maxProfit(vector<int> &p)
+{
+    int profit = 0;
+    int bd = p[0];
+    int sd = p[0];
+    int n = p.size();
+
+    for (int i = 1; i < n; i++)
+    {
+        if (p[i] >= sd)
+            sd = p[i];
+        else
+        {
+            profit += (sd - bd);
+            bd = p[i];
+            sd = p[i];
+        }
+    }
+
+    // to settle the last vala sale, 'cause that gets ignored because of absence of next value which will eventually compare it
+    profit += (sd - bd);
+
+    return profit;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-
-    start
-    {
-        int n, m;
-        cin >> n >> m;
-        int ans = 0;
-
-        vector<int> arr(n + 1, 1);
-
-        FOR(i, 2, n + 1)
-        {
-            int rem = m % i;
-            ans += arr[rem];
-            for (int j = rem; j < n + 1; j += i)
-            {
-                arr[j]++;
-            }
-        }
-
-        cout << ans << endl;
-    }
 }

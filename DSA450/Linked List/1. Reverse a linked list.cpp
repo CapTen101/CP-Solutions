@@ -28,22 +28,18 @@ public:
     struct Node *reverseList(struct Node *head)
     {
         // ITERATIVE METHOD
-        // Node *curr = head, *prev = NULL, *next = NULL;
+        Node *curr = head, *prev = NULL, *next = NULL;
 
-        // while (curr != NULL)
-        // {
-        //     next = curr->next;
-        //     curr->next = prev;
-        //     prev = curr;
-        //     curr = next;
-        // }
-        // return prev;
+        while (curr != NULL)
+        {
+            next = curr->next;
+            curr->next = prev; // reversing the link backwards
+            prev = curr;
+            curr = next;
+        }
+        return prev;
 
         // RECURSIVE METHOD
-        if (head == NULL)
-            return head;
-
-        head
     }
 };
 

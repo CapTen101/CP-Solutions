@@ -26,32 +26,28 @@ class Solution
 {
 public:
     //Function to remove duplicates from unsorted linked list.
-    Node *removeDuplicates(Node *head)
+    Node *moveLastToFirst(Node *head)
     {
-        if (head == NULL)
+        if (head == NULL || head->next == NULL)
             return head;
 
-        Node *prevNode = head;
-        Node *nextNode = head->next;
-        set<int> s;
-        s.insert(prevNode->data);
+        Node *curr = head;
+        Node *lastNode = NULL;
+        Node *secondLastNode = NULL;
 
-        while (nextNode != NULL)
+        while (curr->next->next != NULL)
         {
-            if (s.find(nextNode->data) == s.end()) // if element not found in set
-            {
-                s.insert(nextNode->data);
-            }
-            else // if already present
-            {
-                prevNode->next = nextNode->next;
-                nextNode->next = NULL;
-                nextNode = prevNode->next;
-                continue;
-            }
-            prevNode = prevNode->next;
-            nextNode = nextNode->next;
+            curr = curr->next;
         }
+
+        secondLastNode = curr;
+        lastNode = curr->next;
+
+        // end the linked list
+        secondLastNode->next = NULL;
+
+        lastNode->next = head;
+        head = lastNode;
 
         return head;
     }
@@ -83,7 +79,7 @@ int main()
         }
 
         Solution ob;
-        Node *result = ob.removeDuplicates(head);
+        Node *result = ob.moveLastToFirst(head);
         print(result);
         cout << endl;
     }

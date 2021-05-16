@@ -51,13 +51,30 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    start
-    {
-        int n;
-        cin >> n;
+    // start
+    // {
+    //     int n;
+    //     cin >> n;
 
-        int power = (int)binpow(2, n - 1, 1000000007);
+    //     int power = (int)binpow(2, n - 1, 1000000007);
 
-        cout << power << endl;
-    }
+    //     cout << power << endl;
+    // }
+
+    // set<int> s;
+
+    // s.insert(1);
+    // s.insert(10);
+    // s.insert(2);
+    // s.insert(2);
+    // s.insert(0);
+
+    // for (auto it = s.begin(); it != s.end(); it++)
+    // {
+    //     cout << *it << " ";
+    //     if (s.find(10) == s.end())
+    //         cout << "not found";
+    //     else
+    //         cout << "found" << endl;
+    // }
 }

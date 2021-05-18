@@ -1,5 +1,3 @@
-// { Driver Code Starts
-//Initial Template for C++// C program to find n'th Node in linked list
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -40,10 +38,16 @@ public:
         return prev;
 
         // RECURSIVE METHOD
+        if (head == NULL || head->next == NULL)
+            return head;
+
+        Node *tempNode = reverseList(head->next);
+        head->next->next = head; // V. IMP
+        // basically it goes from 1 -> (2 <- 3 <- 4) ....=> TO => (1 <- 2 <- 3 <- 4) .....
+        head->next = NULL;
+        return tempNode;
     }
 };
-
-// { Driver Code Starts.
 
 void printList(struct Node *head)
 {

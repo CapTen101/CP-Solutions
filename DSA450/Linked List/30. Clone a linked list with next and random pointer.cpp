@@ -188,28 +188,46 @@ int main()
 //Function to clone a linked list with next and random pointer.
 Node *copyList(Node *head)
 {
-    // Your code here
     if (head == NULL)
         return head;
 
     Node *curr = head;
 
-    Node *h2 = new Node(head->data);
-    h2->next = new Node(head->next->data);
-    h2->arb = new Node(head->arb->data);
-    Node *c2 = h2;
-
-    // constructing all the main nodes of the list
-    while (curr->next != NULL)
+    // make a duplicate node after every original node in the original list
+    while (curr)
     {
-        c2->next = new Node(curr->next->data);
-        c2->next->next = curr->next->next;
-        // c2->next->arb = curr->next->arb;
-        curr = curr->next;
-        c2 = c2->next;
+        Node *insert = new Node(curr->data);
+        insert->next = curr->next;
+        curr->next = insert;
+        curr = insert->next;
     }
-    c2->next = NULL; // ending the list
 
-    
-    return h2;
+    Node *head2 = head->next;
+    Node *curr2 = head2;
+    curr = head;
+
+    // assign the random pointers
+    while (curr)
+    {
+
+        if (curr->arb)
+        {
+            curr->next->arb = curr->arb->next;
+        }
+        curr = curr->next->next;
+    }
+
+    curr = head;
+
+    // extract the new list
+    while (curr && curr2)
+    {
+        curr->next = curr->next->next;
+        curr = curr->next;
+
+        curr2->next = ((curr2->next) ? curr2->next->next : NULL);
+        curr2 = curr2->next;
+    }
+
+    return head2;
 }

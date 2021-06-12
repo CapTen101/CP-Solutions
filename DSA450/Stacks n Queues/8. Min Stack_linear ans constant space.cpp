@@ -1,3 +1,4 @@
+// Constant space question: https://practice.geeksforgeeks.org/problems/get-minimum-element-from-stack/1
 #include <bits/stdc++.h>
 #include <stack>
 using namespace std;
@@ -28,7 +29,7 @@ int main()
     }
 }
 
-// GFG constant solution:
+// GFG constant O(1) space solution:
 int min_ele;
 void push(stack<int> &s, int a)
 {
@@ -49,7 +50,7 @@ void push(stack<int> &s, int a)
             // and whenver popping the element, check if it is smaller than min_ele or not
             // if it is indeed smaller, that is an anomaly since no element can be smaller than the min_ele
             // thus obtain the previous of min_ele by min_ele(prev) = 2*min_ele(current) - y
-            // where y is the anomaly number which is less than current min_ele
+            // where y is the anomaly number which is lehttps://practice.geeksforgeeks.org/problems/get-minimum-element-from-stack/1ss than current min_ele
             // and min_ele(prev) means element just bigger than the current min_ele, means the next one in the ascending order
             // ALSO, return the min_ele(current) in the popping function
             s.push(2 * a - min_ele);

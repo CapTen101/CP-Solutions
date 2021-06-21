@@ -22,6 +22,7 @@ using namespace std;
 class Solution {
 public:
     string frequencySort(string s) {
+        // REGULAR MAP APPROACH - INGENIOUS METHOD
 //         map<char, int> m;
         
 //         for(int i=0; i<s.size(); i++){

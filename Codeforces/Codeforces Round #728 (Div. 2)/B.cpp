@@ -23,6 +23,7 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+    cout.tie(NULL);
 
     start
     {
@@ -37,14 +38,14 @@ int main()
         int i = 0, j = i + 1;
         while (i < j && i < n && j < n)
         {
-            // cout << "i=" << i << "j=" << j << endl;
-            if ((a[i] * a[j]) == (i + j))
+            if ((a[i] * a[j]) == (i + j + 2))
                 ans++;
 
             if (j == n - 1)
             {
                 i++;
                 j = i + 1;
+                continue;
             }
 
             j++;

@@ -32,7 +32,7 @@ int main()
         string s;
         cin >> s;
 
-        int emp = 0, full = 0;
+        
         for (int i = 0; i < s.size(); i++)
         {
             if (s[i] == '0')

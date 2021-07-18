@@ -17,7 +17,7 @@ int countdiff(int arr[], int size, int diff)
 {
     int range = 0;
     loop(int, i, 0, size) range += arr[i];
-    int sum = (diff + range) / 2;
+    int sum = (diff + range) / 2; // from two linear equations, we can get this relation for finding the subset having this sum.
 
     int t[size + 1][sum + 1];
 

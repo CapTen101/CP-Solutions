@@ -14,7 +14,7 @@ using namespace std;
     while (t--)
 const ll mod = 1000000007;
 
-bool t[3][11];
+bool t[6][11];
 bool subsetsumMemoization(int arr[], int size, int sum)
 {
     if (sum == 0)
@@ -37,7 +37,7 @@ int main()
 {
     ios_base::sync_with_stdio(false);
 
-    memset(t, 1, sizeof(t));
+    memset(t, -1, sizeof(t));
 
     int arr[5] = {1, 2, 8, 3, 10};
     int sum = 10;

@@ -45,7 +45,7 @@ int lcs(string &s1, string &s2, int n, int m)
 int shortestCommonSupersequence(string X, string Y, int m, int n)
 {
     int lcs_len = lcs(X, Y, m, n);
-    return m + n - lcs_len;
+    return m + n - lcs_len; // join both strings and remove one redundant copy of lcs. that's it
 }
 
 int main()

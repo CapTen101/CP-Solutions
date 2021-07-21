@@ -42,7 +42,7 @@ int lcs(string s1, string s2, int x, int y)
     return dp[x][y];
 }
 
-int longestPalindromeSubseq(string s)
+int minimumNumberOfDeletions(string s)
 {
     string rev = s;
     for (int i = 0; i < s.size() / 2; i++)
@@ -50,13 +50,7 @@ int longestPalindromeSubseq(string s)
         swap(rev[i], rev[s.size() - i - 1]);
     }
 
-    return lcs(s, rev, s.size(), rev.size());
-}
+    int lcs_len = lcs(s, rev, s.size(), rev.size());
 
-int main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    cout << longestPalindromeSubseq("bbbab");
+    return s.size() - lcs_len;
 }

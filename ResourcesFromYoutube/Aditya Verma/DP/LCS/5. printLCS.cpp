@@ -19,6 +19,8 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+// problem: https://leetcode.com/problems/shortest-common-supersequence/
+
 int helperMem(int x, int y, string &s1, string &s2, vector<vector<int>> &dp)
 {
     if (x == 0 || y == 0)
@@ -68,7 +70,7 @@ void lcs(int x, int y, string &s1, string &s2)
     int i = x, j = y;
     vector<char> ans;
 
-    while (i >= 0 and j >= 0)
+    while (i > 0 and j > 0)
     {
         if (s1[i - 1] == s2[j - 1])
         {

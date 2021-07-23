@@ -18,3 +18,8 @@
 - min number of insertions in a string to make it a palindrome
 
 PS. "A subsequence is a sequence that appears in the same relative order, but NOT necessarily contiguous."
+
+format of LCS:
+- input  is two/one string(can convert to two strings)
+- question revolves around shortest/longest subsequences/substrings/palindromes
+- output is string or length

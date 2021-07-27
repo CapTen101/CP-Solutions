@@ -33,6 +33,27 @@ public:
     }
 };
 
+int getLucky(string s, int k)
+{
+    int n = s.size();
+    for (int i = 0; i < n; i++)
+    {
+        s[i] = s[i] - 'a' + 1;
+    }
+
+    n = s.size();
+
+    // for(int i=0; i<n; i++)
+    // {
+    //     cout<<s[i]<<" ";
+    // }
+
+    cout << s;
+
+    return 0;
+}
+
 int main()
 {
+    cout << getLucky("iiii", 1);
 }

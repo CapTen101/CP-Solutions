@@ -11,7 +11,6 @@ long long int helper(vector<int> &nums, int position, vector<int> &dp)
 
     int k = nums[position];
     long long int steps = INT_MAX;
-    int temp_k = 0;
     for (int i = k; i > 0; i--)
     {
         if (position + i < nums.size())

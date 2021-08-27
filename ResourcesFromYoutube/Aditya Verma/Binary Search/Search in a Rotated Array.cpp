@@ -10,81 +10,64 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-// Implemented LINEAR SEARCH algo to find index of minimum element
-long pivotind(long int arr[], long int n)
+int binSearch(vector<int> &arr, int k, int l, int h)
 {
+    int n = arr.size();
+
+    while (l <= h)
+    {
+
+        int mid = l + ((h - l) / 2);
+
+        if (arr[mid] == k)
+            return mid;
+        else if (k > arr[mid])
+            l = mid + 1;
+        else
+            h = mid - 1;
+    }
+
+    return -1;
+}
+
+int pivot_index(vector<int> &arr)
+{
+    int n = arr.size();
+
     if (n == 1)
         return 0;
+
     if (n == 2)
     {
-        if (arr[0] > arr[1])
-            return 1;
-        else
-            return 0;
+        return arr[0] > arr[1] ? 1 : 0;
     }
 
-    for (long i = 0; i < n; i++)
+    if (arr[0] < arr[n - 1])
+        return 0;
+
+    for (int i = 1; i < n; i++)
     {
-        if (arr[0] < arr[n - 1])
-            return 0;
-        if (i > 0 && arr[i] <= arr[(i + 1) % n] && arr[i] < arr[i - 1])
+        if (arr[i] < arr[(i + 1) % n] and arr[i] < arr[i - 1])
             return i;
     }
-
     return -1;
 }
 
-long bin_search_ITERATIVE(long A[], long left, long right, long k)
+int search(vector<int> &nums, int target)
 {
-    while (left <= right)
-    {
-        int mid = left + (right - left) / 2;
+    int pivotidx = pivot_index(nums);
+    int n = nums.size();
 
-        if (A[mid] == k)
-        {
-            return mid;
-        }
+    int firstHalf = binSearch(nums, target, 0, pivotidx - 1);
+    if (firstHalf != -1)
+        return firstHalf;
 
-        else if (k > A[mid])
-        {
-            left = mid + 1;
-        }
-
-        else if (k < A[mid])
-        {
-            right = mid - 1;
-        }
-    }
+    int secondHalf = binSearch(nums, target, pivotidx, n - 1);
+    if (secondHalf != -1)
+        return secondHalf;
 
     return -1;
 }
-
-long search(long arr[], long n, long k)
-{
-    long minindex = pivotind(arr, n);
-    long index = -1;
-
-    if (k < arr[minindex])
-    {
-        return -1;
-    }
-
-    if (k == arr[minindex])
-        return minindex;
-
-    long firsthalf = bin_search_ITERATIVE(arr, 0, minindex - 1, k);
-    long secondhalf = bin_search_ITERATIVE(arr, minindex + 1, n - 1, k);
-
-    if (firsthalf != -1)
-        return firsthalf;
-    else if (secondhalf != -1)
-        return secondhalf;
-    else
-        return -1;
-
-    return index;
-}
-
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -93,7 +76,7 @@ int main()
     {
         long n, k;
         cin >> n;
-        long arr[n];
+        vector<int> arr(n);
 
         for (int i = 0; i < n; i++)
         {
@@ -102,6 +85,6 @@ int main()
 
         cin >> k;
 
-        cout << search(arr, n, k) << endl;
+        cout << search(arr, k) << endl;
     }
 }

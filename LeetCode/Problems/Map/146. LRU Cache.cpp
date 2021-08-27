@@ -4,52 +4,50 @@ using namespace std;
 class LRUCache
 {
 public:
-    vector<int> cache;
-    set<int> lru_keys;
+    unordered_map<int, list<pair<int, int>>::iterator> cache;
+    list<pair<int, int>> lru_order; // list stores {key, value}
     int capacity;
 
-    LRUCache(int capacity)
+    LRUCache(int n)
     {
-        cache.resize(capacity);
-        fill(cache.begin(), cache.end(), -1);
-        this->capacity = capacity;
+        capacity = n;
     }
 
     int get(int key)
     {
-        if (key < cache.size())
+        if (cache.find(key) != cache.end())
         {
-            if (cache[key - 1] == -1)
-                return -1;
-            else
-            {
-                this->lru_keys.erase(key);
-                return cache[key - 1];
-            }
-        }
+            int value = cache[key]->second;
+            lru_order.erase(cache[key]); // erase the element from the middle of the list
 
+            lru_order.push_front({key, value}); // put the new element in the front
+            cache[key] = lru_order.begin();     // store the new address of the new element in map
+            return value;
+        }
         else
             return -1;
     }
 
     void put(int key, int value)
     {
-        if (key > capacity)
+        // if already present, remove current element
+        if (cache.find(key) != cache.end())
         {
+            lru_order.erase(cache[key]); // remove the location of key inside list
+            cache.erase(key);            // remove from cache as well
         }
-        else
+
+        // can't insert anymore, eject lru element
+        if (cache.size() == capacity)
         {
-            cache[key] = value;
+            cache.erase(lru_order.back().first); // remove last element
+            lru_order.pop_back();                // remove from cache as well
         }
+
+        lru_order.push_front({key, value}); // insert at front
+        cache[key] = lru_order.begin();
     }
 };
-
-/**
- * Your LRUCache object will be instantiated and called as such:
- * LRUCache* obj = new LRUCache(capacity);
- * int param_1 = obj->get(key);
- * obj->put(key,value);
- */
 
 int main()
 {

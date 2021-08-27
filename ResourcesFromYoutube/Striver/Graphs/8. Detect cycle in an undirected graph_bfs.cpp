@@ -1,13 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#include <bits/stdc++.h>
+using namespace std;
+
 class Solution
 {
 public:
     //Function to detect cycle in an undirected graph.
 
-    bool helper(vector<int> *adj, bool *vis, int parentNode, int curr)
+    bool helper(vector<int> *adj, bool *vis, int curr)
     {
+        queue<pair<int, int>> q;
+        q.push({curr, -1}); // init parent node as -1
+        vis[curr] = true;
+
+        while (q.size())
+        {
+            int node = q.front().first;
+            int parentNode = q.front().second;
+            q.pop();
+
+            for (int i = 0; i < adj[node].size(); i++)
+            {
+                if (!vis[adj[node][i]])
+                {
+                    vis[adj[node][i]] = true;
+                    q.push({adj[node][i], node});
+                }
+                else if (adj[node][i] != parentNode)
+                    return true;
+            }
+        }
+
+        return false;
     }
 
     bool isCycle(int n, vector<int> adj[])
@@ -18,11 +44,13 @@ public:
         {
             if (!vis[i])
             {
-                bool flag = helper(adj, vis, -1, i);
+                bool flag = helper(adj, vis, i);
                 if (flag)
                     return true;
             }
         }
+
+        return false;
     }
 };
 

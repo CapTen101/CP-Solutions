@@ -4,39 +4,37 @@ using namespace std;
 class Solution
 {
 public:
-    //Function to return list containing vertices in Topological order.
-    void helper(vector<int> *adj, vector<bool> &vis, stack<int> &nodes, int curr)
-    {
-        vis[curr] = true;
-        for (int i : adj[curr])
-        {
-            if (!vis[i])
-            {
-                helper(adj, vis, nodes, i);
-            }
-        }
-
-        nodes.push(curr); // push in stack
-    }
-
     vector<int> topoSort(int V, vector<int> adj[])
     {
-        vector<bool> vis(V, false);
-        stack<int> nodes;
+        queue<int> nodes;
+        vector<int> inDegree(V, 0);
+        // get all inDegree for all nodes
         for (int i = 0; i < V; i++)
         {
-            if (!vis[i])
-            {
-                helper(adj, vis, nodes, i);
-            }
+            for (int j : adj[i])
+                inDegree[j]++;
         }
 
-        // the stack contains the element in ONE of the many topo sort order
+        // if inDegree is 0, then push into queue
+        for (int i = 0; i < V; i++)
+        {
+            if (inDegree[i] == 0)
+                nodes.push(i);
+        }
+
+        // subtract inDegree by 1 everytime you visit a node, if inDegree becomes 0 then again push
         vector<int> toposort;
         while (nodes.size())
         {
-            toposort.push_back(nodes.top());
+            int node = nodes.front();
             nodes.pop();
+            toposort.push_back(node);
+            for (int i : adj[node])
+            {
+                inDegree[i]--;
+                if (inDegree[i] == 0)
+                    nodes.push(i);
+            }
         }
 
         return toposort;

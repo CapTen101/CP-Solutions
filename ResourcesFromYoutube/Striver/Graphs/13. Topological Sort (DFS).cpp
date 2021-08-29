@@ -31,7 +31,7 @@ public:
             }
         }
 
-        // the stack contains the element in ONE of the many topo sort order
+        // the stack contains the element in ONE of the many topo sort orders
         vector<int> toposort;
         while (nodes.size())
         {

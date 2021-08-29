@@ -31,12 +31,10 @@ int main()
         vector<int> arr(n);
 
         for (int i = 0; i < n; i++)
-        {
             cin >> arr[i];
-        }
 
         bool possible = true;
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i < n; i++)
         {
             if (arr[i] > arr[0])
             {
@@ -49,11 +47,10 @@ int main()
             continue;
 
         int count = 0;
-
         stack<int> s;
         for (int i = 1; i < n; i++)
         {
-            if (s.size() and arr[i] >= s.top())
+            if (s.size() && arr[i] >= s.top())
             {
                 s.pop();
             }

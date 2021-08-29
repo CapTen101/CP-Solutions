@@ -48,32 +48,23 @@ int main()
         if (!possible)
             continue;
 
-        int pos = 0, count = 0, ptr = 0;
-        // while (ptr < n)
-        // {
-        //     if (arr[pos] < arr[ptr])
-        //     {
-        //         pos = ptr - 1;
-        //         count++;
-        //     }
-        //     ptr++;
-        // }
+        int count = 0;
 
         stack<int> s;
-        s.push(arr[0]);
         for (int i = 1; i < n; i++)
         {
-            if (arr[i] <= s.top())
-                s.push(arr[i]);
-            if (arr[i] > s.top())
+            if (s.size() and arr[i] >= s.top())
             {
                 s.pop();
-                s.push(arr[i]);
-                count++;
             }
+            s.push(arr[i]);
         }
 
-        count++;
+        while (s.size())
+        {
+            count++;
+            s.pop();
+        }
 
         cout << count << "\n";
     }

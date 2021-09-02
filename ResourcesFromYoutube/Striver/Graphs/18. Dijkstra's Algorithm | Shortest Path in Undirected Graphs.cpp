@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+typedef pair<int, int> pii;
+
 class Solution
 {
 public:
@@ -10,9 +12,9 @@ public:
     {
         // Code here
         vector<int> dist(V, INT_MAX);
-        dist[S] = 0;                                                                             // distance of source from source = 0
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> minHeap; // minHeap
-        minHeap.push({0, S});
+        dist[S] = 0;                                            // distance of source from source = 0
+        priority_queue<pii, vector<pii>, greater<pii>> minHeap; // minHeap of pairs
+        minHeap.push({0, S});                                   // insert --> {distance, node}
 
         while (minHeap.size())
         {

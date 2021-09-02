@@ -47,6 +47,7 @@ public:
 
         return north || south || east || west;
     }
+
     bool isEscapePossible(vector<vector<int>> &blocked, vector<int> &source, vector<int> &target)
     {
         unordered_multimap<int, int> umm;

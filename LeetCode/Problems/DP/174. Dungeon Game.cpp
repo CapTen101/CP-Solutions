@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// best solution on Leetcode: https://leetcode.com/problems/dungeon-game/discuss/745340/post-Dedicated-to-beginners-of-DP-or-have-no-clue-how-to-start
+
 class Solution
 {
 public:

@@ -34,14 +34,15 @@ public:
     int findLongestChain(vector<vector<int>> &p)
     {
         /*
-        passes only 140/205 cases
+        QUITE SLOW -> passes only 140/205 cases:
         
         unordered_map<int, unordered_map<int, int>> dp;
         sort(p.begin(), p.end());
         return helper(p, 0, INT_MIN, dp);
         */
 
-        /* DP Approach
+        /* DP APPROACH:
+
         sort(p.begin(), p.end());
         vector<int> dp(p.size(), 1);
         if (p.size() == 1)

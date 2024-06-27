@@ -30,6 +30,8 @@ int TabulationKnapsack(int wt[], int val[], int size, int capacity)
     return t[size][capacity];
 }
 
+// another optimization is possible. check solution submitted on GFG for this
+
 int main()
 {
     ios_base::sync_with_stdio(false);
